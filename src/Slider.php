@@ -19,7 +19,7 @@ final class Slider
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.4.5';
+	const VERSION = '0.4.6';
 
 	/**
 	 * [__construct description]
@@ -135,7 +135,7 @@ final class Slider
 		);
 		$this->enqueue();
 
-		echo Slides::init( $atts )->get(); // @codingStandardsIgnoreLine
+		echo Slides::init( $atts )->get();
 	}
 
 }
