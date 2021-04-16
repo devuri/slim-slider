@@ -13,7 +13,7 @@ class Slides
 		return sprintf(
 			'<div id="slim_slider_main" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
 		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-		            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="%2$s/svg/loading/static-svg/spin.svg" />
+		            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="%3$s/svg/loading/static-svg/spin.svg" />
 		    </div> %4$s %5$s',
 			$args['width'],
 			$args['height'],
