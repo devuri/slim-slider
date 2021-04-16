@@ -5,13 +5,6 @@ namespace SlimSlider;
 class Slides
 {
 
-	use Asset;
-
-	/**
-	 * Define Version
-	 */
-	const VERSION = '0.4.1';
-
 	protected $args = [];
 
 	/**
@@ -31,8 +24,7 @@ class Slides
 			'id'      => '904562',
 			'width'   => '1920',
 			'height'  => '740',
-			'navtype' => 'b',
-			'nav'     => 1,
+			'nav'     => 'b',
 			'slides'  => array(),
 		);
 		$this->args = wp_parse_args( $args, $defaults );
@@ -72,6 +64,14 @@ class Slides
 		);
 	}
 
+	/**
+	 * Slides.
+	 * @return array
+	 */
+	public function get_slides() {
+		return explode( ",", $this->args['slides'] );
+	}
+
 	public function images(){
 		foreach ( $this->get_slides() as $slide ) {
 
@@ -97,10 +97,6 @@ class Slides
 			$this->args['height'],
 			$this->images()
 		);
-	}
-
-	public function get_slides() {
-		return explode( ",", $this->args['slides'] );
 	}
 
 	/*

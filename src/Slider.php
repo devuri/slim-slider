@@ -119,11 +119,11 @@ final class Slider
 				'id'      => '904562',
 				'width'   => '1920',
 				'height'  => '740',
-				'navtype' => 'b',
-				'nav'     => 1,
+				'nav'     => 'b',
 				'slides'  => array(),
 			),
-			$atts
+			$atts,
+			'slim_slider'
 		);
 		$this->enqueue();
 

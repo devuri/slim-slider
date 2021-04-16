@@ -14,15 +14,27 @@ class Navigation
 	public static function get( $args ) {
 
 		// Bullet Navigator.
-		if ( $args['navtype'] === 'b' && $args['nav'] === 1 ) {
+		if ( $args['nav'] === 'b' ) {
 			return self::bullet_nav();
 		}
 
 		// Arrow Navigator.
-		if ( $args['navtype'] === 'a'  && $args['nav'] === 1) {
+		if ( $args['nav'] === 'a' ) {
 			return self::arrow_nav();
 		}
 
+		// Arrow + Bullet Navigator.
+		if ( $args['nav'] === 'ab' ) {
+			return self::nav();
+		}
+
+	}
+
+	/**
+	 * Nav
+	 */
+	public static function nav() {
+		return self::arrow_nav() . self::bullet_nav() ;
 	}
 
 	/**
