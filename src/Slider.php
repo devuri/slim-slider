@@ -135,7 +135,7 @@ final class Slider
 		);
 		$this->enqueue();
 
-		echo Slides::init( $atts )->get();
+		echo Slides::init( $atts )->get(); // @codingStandardsIgnoreLine
 	}
 
 }
