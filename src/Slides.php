@@ -87,7 +87,7 @@ class Slides
 		return $slider_image;
 	}
 
-	public function image_slides(){
+	public function image_slides() {
 		return sprintf(
 			'<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:%1$spx;height:%1$spx;overflow:hidden;">
 				%3$s

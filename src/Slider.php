@@ -19,7 +19,7 @@ final class Slider
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.4.1';
+	const VERSION = '0.4.5';
 
 	public function __construct()
 	{
