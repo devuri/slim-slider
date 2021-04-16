@@ -71,17 +71,14 @@ final class Slider
 		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/style.css', array(), self::VERSION, 'all');
 		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slim.slider.min.js', array( 'jquery' ), self::VERSION, true );
 		wp_enqueue_script( 'slim-slider-options', Asset::uri() . '/js/options.js', array( 'jquery' ), self::VERSION, true );
-		wp_enqueue_script( 'slim-slider-init', Asset::uri() . '/js/init.js', array( 'jquery' ), self::VERSION, true );
-
 	}
 
-	/**
-	 * Get The Slide.
-	 *
-	 * @param  array $atts
-	 *
-	 * @return string
-	 */
+    /**
+     * Get The Slide.
+     *
+     * @param $id
+     * @return string
+     */
 	public function get_slide( $id ) {
 
 		if ( ! get_post($id) ) return false;
@@ -129,7 +126,7 @@ final class Slider
 		);
 		$this->enqueue();
 
-		echo Slides::get($atts);
+		echo Slides::init($atts)->get();
 	}
 
 	/**
