@@ -23,7 +23,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-# deny direct access
+// deny direct access.
 if ( ! defined( 'WPINC' ) ) {
     die;
 }
@@ -33,11 +33,11 @@ if ( ! defined( 'WPINC' ) ) {
  */
 require __DIR__ . '/vendor/autoload.php';
 
-//plugin directory CONSTANT
-define("SLIMSLIDER_DIR", dirname(__FILE__));
+// plugin directory CONSTANT.
+define( 'SLIMSLIDER_DIR', dirname( __FILE__ ) );
 
-//PLUGIN URL
-define("SLIMSLIDER_URL", plugins_url( "/",__FILE__ ));
+// plugin url.
+define( 'SLIMSLIDER_URL', plugins_url( '/', __FILE__ ) );
 
 // setup the slider.
 ( new SlimSlider\Slider() )->init();
