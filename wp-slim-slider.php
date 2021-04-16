@@ -14,7 +14,7 @@
  * Description:       Simple WordPress slider use [sim_slider] shortcode.
  * Version:           0.3.4
  * Requires at least: 3.4
- * Requires PHP:      5.6
+ * Requires PHP:      7.1
  * Author:            Uriel Wilson
  * Author URI:        https://urielwilson.com
  * Text Domain:       wp-sim-slider
