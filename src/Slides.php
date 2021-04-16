@@ -10,7 +10,7 @@ class Slides
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.3.0';
+	const VERSION = '0.4.1';
 
 	protected $args = [];
 
@@ -36,6 +36,8 @@ class Slides
 			'slides'  => array(),
 		);
 		$this->args = wp_parse_args( $args, $defaults );
+
+		wp_localize_script( 'slim-slider-init', 'SlimSliderData', $this->args );
 
 	}
 
@@ -105,10 +107,7 @@ class Slides
 	 * Get the Slider.
 	 */
 	public function get(){
-		wp_enqueue_script( 'slim-slider-init', Asset::uri() . '/js/init.js', array( 'jquery' ), self::VERSION, true );
-		wp_localize_script( 'slim-slider-init', 'SlimSliderData', $this->args );
 	    return $this->slider_main();
 	}
-
 
 }
