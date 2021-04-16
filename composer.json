@@ -1,0 +1,14 @@
+{
+	"autoload": {
+		  "psr-4": {
+			"SlimSlider\\":"src"
+		}
+	},
+	"config": {
+	    "optimize-autoloader": true
+    },
+	"require": {
+		"devuri/wp-admin-page": "^3.1",
+		"devuri/cpt-meta-box": "^0.1"
+	}
+}
