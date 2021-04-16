@@ -69,7 +69,7 @@ final class Slider
 
 	public function enqueue() {
 		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/style.css', array(), self::VERSION, 'all');
-		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slim.slider.min.js', array( 'jquery' ), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
 		wp_enqueue_script( 'slim-slider-options', Asset::uri() . '/js/options.js', array( 'jquery' ), self::VERSION, true );
 		wp_enqueue_script( 'slim-slider-init', Asset::uri() . '/js/init.js', array( 'jquery' ), self::VERSION, true );
 	}
