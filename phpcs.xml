@@ -13,7 +13,11 @@
 	<rule ref="WordPress">
 		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
 	</rule>
+
+	<!-- Optionally enforce short arrays: -->
+	<!-- <rule ref="Generic.Arrays.DisallowLongArraySyntax"/> -->
 
 	<rule ref="Squiz.PHP.CommentedOutCode"/>
 	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
