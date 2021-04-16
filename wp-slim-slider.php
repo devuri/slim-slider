@@ -11,8 +11,8 @@
  * @wordpress-plugin
  * Plugin Name:       Slim Slider
  * Plugin URI:        https://switchwebdev.com/wordpress-plugins/
- * Description:       Simple WordPress slider use [sim_slider] shortcode.
- * Version:           0.4.3
+ * Description:       Premium Simple WordPress slider use [sim_slider] shortcode.
+ * Version:           0.4.6
  * Requires at least: 3.4
  * Requires PHP:      7.1
  * Author:            Uriel Wilson
@@ -23,7 +23,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-# deny direct access
+// deny direct access.
 if ( ! defined( 'WPINC' ) ) {
     die;
 }
@@ -33,11 +33,11 @@ if ( ! defined( 'WPINC' ) ) {
  */
 require __DIR__ . '/vendor/autoload.php';
 
-//plugin directory CONSTANT
-define("SLIMSLIDER_DIR", dirname(__FILE__));
+// plugin directory CONSTANT.
+define( 'SLIMSLIDER_DIR', dirname( __FILE__ ) );
 
-//PLUGIN URL
-define("SLIMSLIDER_URL", plugins_url( "/",__FILE__ ));
+// plugin url.
+define( 'SLIMSLIDER_URL', plugins_url( '/', __FILE__ ) );
 
 // setup the slider.
 ( new SlimSlider\Slider() )->init();

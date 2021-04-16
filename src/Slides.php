@@ -4,15 +4,19 @@ namespace SlimSlider;
 
 class Slides
 {
-
+	/**
+	 * Shortcode $args
+	 *
+	 * @var array
+	 */
 	protected $args = [];
 
 	/**
-	 * start here.
-	 * @param array $args uses shortcode $atts
+	 * Start here.
+	 *
+	 * @param array $args uses shortcode $atts.
 	 */
 	public function __construct( $args ) {
-
 		/*
 		 *  $id    string    90456  : uniqid for the current slider
 		 *  $w     string    1920   : slider width
@@ -21,11 +25,11 @@ class Slides
 		 *  $nav   string    slides : list of slides "1,2,5,6"
 		 */
 		$defaults = array(
-			'id'      => '904562',
-			'width'   => '1920',
-			'height'  => '740',
-			'nav'     => 'b',
-			'slides'  => array(),
+			'id'     => '904562',
+			'width'  => '1920',
+			'height' => '740',
+			'nav'    => 'b',
+			'slides' => array(),
 		);
 		$this->args = wp_parse_args( $args, $defaults );
 
@@ -34,22 +38,32 @@ class Slides
 	}
 
 	/**
-	 * init.
+	 * Init.
 	 *
-	 * @param array $args uses shortcode $atts
+	 * @param array $args uses shortcode $atts.
 	 *
 	 * @return Slides
 	 */
-	public function init( $args ){
+	public function init( $args ) {
 		return new self( $args );
 	}
 
-	public function slide_data( $id ){
-		return ( new Slider())->get_slide($id);
+	/**
+	 * Get Slide meta info.
+	 *
+	 * @param int $id slide item ID.
+	 * @return array
+	 */
+	public function slide_data( $id ) {
+		return ( new Slider() )->get_slide( $id );
 	}
 
-
-	public function slider_main(){
+	/**
+	 * Setup the main slider.
+	 *
+	 * @return string
+	 */
+	public function slider_main() {
 		return sprintf(
 			'<div id="slim_slider_main_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
 		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -66,28 +80,39 @@ class Slides
 
 	/**
 	 * Slides.
+	 *
 	 * @return array
 	 */
 	public function get_slides() {
-		return explode( ",", $this->args['slides'] );
+		return explode( ',', $this->args['slides'] );
 	}
 
-	public function images(){
+	/**
+	 * Slide Images.
+	 *
+	 * @return string
+	 */
+	public function images() {
 		foreach ( $this->get_slides() as $slide ) {
 
-			$slide = intval($slide);
-			$meta = $this->slide_data($slide);
+			$slide = intval( $slide );
+			$meta = $this->slide_data( $slide );
 
 		    if ( is_null( $meta['url'] ) || empty( $meta['url'] ) ) {
-		        $slider_image .= '<div><img data-u="image" alt="'.$meta['alt'].'" src="'.wp_get_attachment_url( $meta['thumbnail'] ).'" /></div>';
+		        $slider_image .= '<div><img data-u="image" alt="' . $meta['alt'] . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></div>';
 		    } else {
-				$slider_image .= '<div><a href="'.$meta['url'].'"><img data-u="image" alt="'.$meta['alt'].'" src="'.wp_get_attachment_url( $meta['thumbnail'] ).'" /></a></div>';
+				$slider_image .= '<div><a href="' . $meta['url'] . '"><img data-u="image" alt="' . $meta['alt'] . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></a></div>';
 		    }
 	    }
 		return $slider_image;
 	}
 
-	public function image_slides(){
+	/**
+	 * Image container.
+	 *
+	 * @return string
+	 */
+	public function image_slides() {
 		return sprintf(
 			'<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:%1$spx;height:%1$spx;overflow:hidden;">
 				%3$s
@@ -98,10 +123,10 @@ class Slides
 		);
 	}
 
-	/*
+	/**
 	 * Get the Slider.
 	 */
-	public function get(){
+	public function get() {
 	    return $this->slider_main();
 	}
 

@@ -11,7 +11,7 @@ trait Asset
 {
 
 	/**
-	 * asset uri.
+	 * Asset uri.
 	 *
 	 * @return string
      */

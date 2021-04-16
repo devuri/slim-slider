@@ -10,21 +10,24 @@ class Navigation
 
 	/**
 	 * Navigator
+	 *
+	 * @param  array $args .
+	 * @return string
 	 */
 	public static function get( $args ) {
 
 		// Bullet Navigator.
-		if ( $args['nav'] === 'b' ) {
+		if ( 'b' === $args['nav'] ) {
 			return self::bullet_nav();
 		}
 
 		// Arrow Navigator.
-		if ( $args['nav'] === 'a' ) {
+		if ( 'a' === $args['nav'] ) {
 			return self::arrow_nav();
 		}
 
 		// Arrow + Bullet Navigator.
-		if ( $args['nav'] === 'ab' ) {
+		if ( 'ab' === $args['nav'] ) {
 			return self::nav();
 		}
 
@@ -34,7 +37,7 @@ class Navigation
 	 * Nav
 	 */
 	public static function nav() {
-		return self::arrow_nav() . self::bullet_nav() ;
+		return self::arrow_nav() . self::bullet_nav();
 	}
 
 	/**
