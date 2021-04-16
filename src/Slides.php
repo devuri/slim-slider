@@ -14,11 +14,11 @@ class Slides
 	public function __construct( $args ) {
 
 		/*
-		 *  $id    string    90456 : uniqid for the current slider
-		 *  $w     string    1920  : slider width
-		 *  $h     string    600   : slider height
-		 *  $ntype string    b     : slider navigation a=arrows and b=bullets
-		 *  $nav   boolean   1     : show slider navigation 0 for no 1 for yes
+		 *  $id    string    90456  : uniqid for the current slider
+		 *  $w     string    1920   : slider width
+		 *  $h     string    600    : slider height
+		 *  $nav   string    b      : slider nav a=arrows and b=bullets or "ab"
+		 *  $nav   string    slides : list of slides "1,2,5,6"
 		 */
 		$defaults = array(
 			'id'      => '904562',
@@ -76,12 +76,12 @@ class Slides
 		foreach ( $this->get_slides() as $slide ) {
 
 			$slide = intval($slide);
-			$slide_data = $this->slide_data($slide);
+			$meta = $this->slide_data($slide);
 
-		    if ( is_null( $slide_data['url'] ) || empty( $slide_data['url'] ) ) {
-		        $slider_image .= '<div><img data-u="image" src="'.wp_get_attachment_url( $slide_data['thumbnail'] ).'" /></div>';
+		    if ( is_null( $meta['url'] ) || empty( $meta['url'] ) ) {
+		        $slider_image .= '<div><img data-u="image" alt="'.$meta['alt'].'" src="'.wp_get_attachment_url( $meta['thumbnail'] ).'" /></div>';
 		    } else {
-				$slider_image .= '<div><a href="'.$slide_data['url'].'"><img data-u="image" src="'.wp_get_attachment_url( $slide_data['thumbnail'] ).'" /></a></div>';
+				$slider_image .= '<div><a href="'.$meta['url'].'"><img data-u="image" alt="'.$meta['alt'].'" src="'.wp_get_attachment_url( $meta['thumbnail'] ).'" /></a></div>';
 
 		    }
 	    }
