@@ -19,7 +19,7 @@ final class Slider
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.3.0';
+	const VERSION = '0.4.1';
 
 	public function __construct()
 	{
@@ -69,16 +69,17 @@ final class Slider
 
 	public function enqueue() {
 		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/style.css', array(), self::VERSION, 'all');
-		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slim.slider.min.js', array( 'jquery' ), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider-options', Asset::uri() . '/js/options.js', array( 'jquery' ), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider-init', Asset::uri() . '/js/init.js', array( 'jquery' ), self::VERSION, true );
 	}
 
-	/**
-	 * Get The Slide.
-	 *
-	 * @param  array $atts
-	 *
-	 * @return string
-	 */
+    /**
+     * Get The Slide.
+     *
+     * @param $id
+     * @return string
+     */
 	public function get_slide( $id ) {
 
 		if ( ! get_post($id) ) return false;
@@ -118,17 +119,15 @@ final class Slider
 				'id'      => '904562',
 				'width'   => '1920',
 				'height'  => '740',
-				'navtype' => 'b',
-				'nav'     => 1,
+				'nav'     => 'b',
 				'slides'  => array(),
 			),
-			$atts
+			$atts,
+			'slim_slider'
 		);
 		$this->enqueue();
 
-		wp_enqueue_script( 'slim-slider-options', Asset::uri() . '/js/options.js', array( 'jquery' ), self::VERSION, true );
-		wp_enqueue_script( 'slim-slider-init', Asset::uri() . '/js/init.js', array( 'jquery', 'slim-slider-options' ), self::VERSION, true );
-		echo Slides::get($atts);
+		echo Slides::init($atts)->get();
 	}
 
 	/**

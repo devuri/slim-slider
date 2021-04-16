@@ -70,6 +70,7 @@ class ComposerStaticInit2cf1bd838b3c4ee620cc95822a13a3f8
         'DevUri\\Meta\\Traits\\StyleTrait' => __DIR__ . '/..' . '/devuri/cpt-meta-box/src/Traits/StyleTrait.php',
         'SlimSlider\\Asset' => __DIR__ . '/../..' . '/src/Asset.php',
         'SlimSlider\\MetaView\\Slide' => __DIR__ . '/../..' . '/src/MetaView/Slide.php',
+        'SlimSlider\\Navigation' => __DIR__ . '/../..' . '/src/Navigation.php',
         'SlimSlider\\Slider' => __DIR__ . '/../..' . '/src/Slider.php',
         'SlimSlider\\Slides' => __DIR__ . '/../..' . '/src/Slides.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',

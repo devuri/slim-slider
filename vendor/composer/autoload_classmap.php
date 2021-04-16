@@ -18,6 +18,7 @@ return array(
     'DevUri\\Meta\\Traits\\StyleTrait' => $vendorDir . '/devuri/cpt-meta-box/src/Traits/StyleTrait.php',
     'SlimSlider\\Asset' => $baseDir . '/src/Asset.php',
     'SlimSlider\\MetaView\\Slide' => $baseDir . '/src/MetaView/Slide.php',
+    'SlimSlider\\Navigation' => $baseDir . '/src/Navigation.php',
     'SlimSlider\\Slider' => $baseDir . '/src/Slider.php',
     'SlimSlider\\Slides' => $baseDir . '/src/Slides.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
