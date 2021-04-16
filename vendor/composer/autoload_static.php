@@ -22,7 +22,7 @@ class ComposerStaticInit2cf1bd838b3c4ee620cc95822a13a3f8
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
-            'SlimSlider\\' => 10,
+            'SlimSlider\\' => 11,
         ),
         'D' => 
         array (
@@ -68,7 +68,6 @@ class ComposerStaticInit2cf1bd838b3c4ee620cc95822a13a3f8
         'DevUri\\Meta\\Traits\\Form' => __DIR__ . '/..' . '/devuri/cpt-meta-box/src/Traits/Form.php',
         'DevUri\\Meta\\Traits\\MetaTrait' => __DIR__ . '/..' . '/devuri/cpt-meta-box/src/Traits/MetaTrait.php',
         'DevUri\\Meta\\Traits\\StyleTrait' => __DIR__ . '/..' . '/devuri/cpt-meta-box/src/Traits/StyleTrait.php',
-        'SlimSlider\\Admin\\SliderAdmin' => __DIR__ . '/../..' . '/src/Admin/SliderAdmin.php',
         'SlimSlider\\Asset' => __DIR__ . '/../..' . '/src/Asset.php',
         'SlimSlider\\MetaView\\Slide' => __DIR__ . '/../..' . '/src/MetaView/Slide.php',
         'SlimSlider\\Slider' => __DIR__ . '/../..' . '/src/Slider.php',

@@ -16,7 +16,6 @@ return array(
     'DevUri\\Meta\\Traits\\Form' => $vendorDir . '/devuri/cpt-meta-box/src/Traits/Form.php',
     'DevUri\\Meta\\Traits\\MetaTrait' => $vendorDir . '/devuri/cpt-meta-box/src/Traits/MetaTrait.php',
     'DevUri\\Meta\\Traits\\StyleTrait' => $vendorDir . '/devuri/cpt-meta-box/src/Traits/StyleTrait.php',
-    'SlimSlider\\Admin\\SliderAdmin' => $baseDir . '/src/Admin/SliderAdmin.php',
     'SlimSlider\\Asset' => $baseDir . '/src/Asset.php',
     'SlimSlider\\MetaView\\Slide' => $baseDir . '/src/MetaView/Slide.php',
     'SlimSlider\\Slider' => $baseDir . '/src/Slider.php',
