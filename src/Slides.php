@@ -24,15 +24,9 @@ class Slides
 		 *  $nav   string    b      : slider nav a=arrows and b=bullets or "ab"
 		 *  $nav   string    slides : list of slides "1,2,5,6"
 		 */
-		$defaults = array(
-			'id'     => '904562',
-			'width'  => '1920',
-			'height' => '740',
-			'nav'    => 'b',
-			'slides' => array(),
-		);
-		$this->args = wp_parse_args( $args, $defaults );
+		$this->args = $args;
 
+		// pass on the args to slimslider.js.
 		wp_localize_script( 'slim-slider', 'SlimSliderData', $this->args );
 
 	}
