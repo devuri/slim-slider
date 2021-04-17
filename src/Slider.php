@@ -78,7 +78,7 @@ final class Slider
 	public function enqueue() {
 		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/style.css', array(), self::VERSION, 'all' );
 		wp_enqueue_script( 'slim-slider-jssor', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
-		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.min.js', array(), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.min.js', array( 'slim-slider-jssor' ), self::VERSION, true );
 	}
 
     /**
