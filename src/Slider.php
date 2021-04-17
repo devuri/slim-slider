@@ -107,7 +107,6 @@ final class Slider
 		$atts = shortcode_atts(
 			array(
 				'id'       => '904562',
-				'width'    => '1920',
 				'height'   => '740',
 				'nav'      => 'ab',
 				'swipe'    => '800', // swipe animation duration.

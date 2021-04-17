@@ -26,6 +26,7 @@ var slimslider_options = {
 	$PlayOrientation: 1, // 1: horizental 2: vertical
 	$SlideDuration: parseInt( slimsliderID.swipe ), // swipe animation duration (in milliseconds)
 	$FillMode: parseInt( slimsliderID.fill ), // 0: stretch 1: contain 2: cover 4: actual size 5: contain
+	$SlideWidth: parseInt( slimsliderID.width ),
 	$SlideHeight: parseInt( slimsliderID.height ),
 	$SlideEasing: $Jease$.$OutQuint,
 	$SlideshowOptions: {

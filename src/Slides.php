@@ -17,16 +17,11 @@ class Slides
 	 * @param array $args uses shortcode $atts.
 	 */
 	public function __construct( $args ) {
-		/*
-		 *  $id    string    90456  : uniqid for the current slider
-		 *  $w     string    1920   : slider width
-		 *  $h     string    600    : slider height
-		 *  $nav   string    b      : slider nav a=arrows and b=bullets or "ab"
-		 *  $nav   string    slides : list of slides "1,2,5,6"
-		 */
 		$this->args = $args;
+		$this->args['fill']  = $this->fillmode();
+		$this->args['width'] = '1920';
 
-		// pass on the args to slimslider.js.
+		// pass on options to slimslider.js.
 		wp_localize_script( 'slim-slider', 'SlimSliderData', $this->options() );
 
 	}
@@ -174,7 +169,6 @@ class Slides
 	 * @return array .
 	 */
 	protected function options() {
-		$this->args['fill'] = $this->fillmode();
 		return $this->args;
 	}
 }
