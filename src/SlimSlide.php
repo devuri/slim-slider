@@ -49,7 +49,7 @@ final class SlimSlide
 			'label'                 => __( 'Slim Slides', 'slim-slider' ),
 			'labels'                => $labels,
 			'description'           => '',
-			'public'                => true,
+			'public'                => false,
 			'publicly_queryable'    => false,
 			'show_ui'               => true,
 			'show_in_rest'          => false,

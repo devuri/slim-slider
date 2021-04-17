@@ -73,6 +73,7 @@ class ComposerStaticInit2cf1bd838b3c4ee620cc95822a13a3f8
         'SlimSlider\\Navigation' => __DIR__ . '/../..' . '/src/Navigation.php',
         'SlimSlider\\Slider' => __DIR__ . '/../..' . '/src/Slider.php',
         'SlimSlider\\Slides' => __DIR__ . '/../..' . '/src/Slides.php',
+        'SlimSlider\\SlimSlide' => __DIR__ . '/../..' . '/src/SlimSlide.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\VarDumper\\Caster\\AmqpCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/AmqpCaster.php',
         'Symfony\\Component\\VarDumper\\Caster\\ArgsStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ArgsStub.php',
