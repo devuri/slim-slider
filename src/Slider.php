@@ -19,7 +19,7 @@ final class Slider
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.4.6';
+	const VERSION = '0.5.0';
 
 	/**
 	 * [__construct description]
@@ -76,10 +76,9 @@ final class Slider
 	 * @return void
 	 */
 	public function enqueue() {
-		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/style.css', array(), self::VERSION, 'all' );
-		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
-		wp_enqueue_script( 'slim-slider-options', Asset::uri() . '/js/options.js', array( 'jquery' ), self::VERSION, true );
-		wp_enqueue_script( 'slim-slider-init', Asset::uri() . '/js/init.js', array( 'jquery' ), self::VERSION, true );
+		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/slimslider.css', array(), self::VERSION, 'all' );
+		wp_enqueue_script( 'slim-slider-jssor', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.min.js', array( 'slim-slider-jssor' ), self::VERSION, true );
 	}
 
     /**
@@ -100,23 +99,6 @@ final class Slider
 	}
 
 	/**
-	 * Get All Slides.
-	 *
-	 * @param bool $array .
-	 *
-	 * @return string
-	 */
-	public function slides( $array = true ) {
-
-		$slides = new Data( 'slimslide' );
-
-		if ( $array ) {
-			return $slides->list();
-		}
-		return $slides->items();
-	}
-
-	/**
 	 * The Slider.
 	 *
 	 * @param  array $atts .
@@ -127,7 +109,7 @@ final class Slider
 				'id'     => '904562',
 				'width'  => '1920',
 				'height' => '740',
-				'nav'    => 'b',
+				'nav'    => 'ab',
 				'slides' => array(),
 			),
 			$atts,
@@ -135,7 +117,7 @@ final class Slider
 		);
 		$this->enqueue();
 
-		echo Slides::init( $atts )->get();
+		echo Slides::init( $atts )->get(); // @codingStandardsIgnoreLine.
 	}
 
 }

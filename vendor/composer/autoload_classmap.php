@@ -21,6 +21,7 @@ return array(
     'SlimSlider\\Navigation' => $baseDir . '/src/Navigation.php',
     'SlimSlider\\Slider' => $baseDir . '/src/Slider.php',
     'SlimSlider\\Slides' => $baseDir . '/src/Slides.php',
+    'SlimSlider\\SlimSlide' => $baseDir . '/src/SlimSlide.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
     'Symfony\\Component\\VarDumper\\Caster\\AmqpCaster' => $vendorDir . '/symfony/var-dumper/Caster/AmqpCaster.php',
     'Symfony\\Component\\VarDumper\\Caster\\ArgsStub' => $vendorDir . '/symfony/var-dumper/Caster/ArgsStub.php',

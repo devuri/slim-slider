@@ -2,6 +2,8 @@
 
 namespace SlimSlider;
 
+use DevUri\Meta\Data;
+
 /**
  * The Slider class.
  *
@@ -9,6 +11,23 @@ namespace SlimSlider;
  */
 final class SlimSlide
 {
+
+	/**
+	 * Get All Slides.
+	 *
+	 * @param bool $array .
+	 *
+	 * @return string
+	 */
+	public static function slides( $array = true ) {
+
+		$slides = new Data( 'slimslide' );
+
+		if ( $array ) {
+			return $slides->list();
+		}
+		return $slides->items();
+	}
 
 	/**
 	 * Post Type: Slim Slides.
@@ -35,7 +54,7 @@ final class SlimSlide
 			'not_found'             => __( 'Not found', 'slim-slider' ),
 			'not_found_in_trash'    => __( 'Not found in Trash', 'slim-slider' ),
 			'featured_image'        => __( 'Slide Image', 'slim-slider' ),
-			'set_featured_image'    => __( 'Set slide image', 'slim-slider' ),
+			'set_featured_image'    => __( 'Add slide image', 'slim-slider' ),
 			'remove_featured_image' => __( 'Remove slide image', 'slim-slider' ),
 			'use_featured_image'    => __( 'Use as slide image', 'slim-slider' ),
 			'insert_into_item'      => __( 'Insert into item', 'slim-slider' ),
@@ -49,7 +68,7 @@ final class SlimSlide
 			'label'                 => __( 'Slim Slides', 'slim-slider' ),
 			'labels'                => $labels,
 			'description'           => '',
-			'public'                => true,
+			'public'                => false,
 			'publicly_queryable'    => false,
 			'show_ui'               => true,
 			'show_in_rest'          => false,

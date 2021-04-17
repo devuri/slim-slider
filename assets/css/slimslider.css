@@ -1,4 +1,4 @@
-/*sim slider loading skin spin css*/
+/*slim slider loading skin spin css*/
 .slimslrl-009-spin img {
     animation-name: slimslrl-009-spin;
     animation-duration: 1.6s;
@@ -11,7 +11,7 @@
     to { transform: rotate(360deg); }
 }
 
-/*sim slider bullet skin 032 css*/
+/*slim slider bullet skin 032 css*/
 .slimslb032 {position:absolute;}
 .slimslb032 .i {position:absolute;cursor:pointer;}
 .slimslb032 .i .b {fill:#fff;fill-opacity:0.7;stroke:#000;stroke-width:1200;stroke-miterlimit:10;stroke-opacity:0.25;}
@@ -19,7 +19,7 @@
 .slimslb032 .iav .b {fill:#000;fill-opacity:1;stroke:#fff;stroke-opacity:.35;}
 .slimslb032 .i.idn {opacity:.3;}
 
-/*sim slider arrow skin 051 css*/
+/*slim slider arrow skin 051 css*/
 .slimsla051 {display:block;position:absolute;cursor:pointer;}
 .slimsla051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
 .slimsla051:hover {opacity:.8;}

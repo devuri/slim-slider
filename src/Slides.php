@@ -24,16 +24,10 @@ class Slides
 		 *  $nav   string    b      : slider nav a=arrows and b=bullets or "ab"
 		 *  $nav   string    slides : list of slides "1,2,5,6"
 		 */
-		$defaults = array(
-			'id'     => '904562',
-			'width'  => '1920',
-			'height' => '740',
-			'nav'    => 'b',
-			'slides' => array(),
-		);
-		$this->args = wp_parse_args( $args, $defaults );
+		$this->args = $args;
 
-		wp_localize_script( 'slim-slider-init', 'SlimSliderData', $this->args );
+		// pass on the args to slimslider.js.
+		wp_localize_script( 'slim-slider', 'SlimSliderData', $this->args );
 
 	}
 
@@ -44,7 +38,7 @@ class Slides
 	 *
 	 * @return Slides
 	 */
-	public function init( $args ) {
+	public static function init( $args ) {
 		return new self( $args );
 	}
 
@@ -81,9 +75,14 @@ class Slides
 	/**
 	 * Slides.
 	 *
+	 * Get slides by ID, if not just use the slides defined.
+	 *
 	 * @return array
 	 */
 	public function get_slides() {
+		if ( empty( $this->args['slides'] ) ) {
+			return array_keys( SlimSlide::slides() );
+		}
 		return explode( ',', $this->args['slides'] );
 	}
 
@@ -93,6 +92,8 @@ class Slides
 	 * @return string
 	 */
 	public function images() {
+
+		$slider_image = '';
 		foreach ( $this->get_slides() as $slide ) {
 
 			$slide = intval( $slide );
@@ -114,7 +115,7 @@ class Slides
 	 */
 	public function image_slides() {
 		return sprintf(
-			'<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:%1$spx;height:%1$spx;overflow:hidden;">
+			'<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;">
 				%3$s
 			</div>',
 			$this->args['width'],
@@ -127,6 +128,12 @@ class Slides
 	 * Get the Slider.
 	 */
 	public function get() {
+		if ( false === $this->get_slides() ) {
+			return sprintf(
+				'<code style="background-color:#000; color:#fff; padding:20px;">
+				Slim Slider could not find the slides</code>'
+			);
+		}
 	    return $this->slider_main();
 	}
 
