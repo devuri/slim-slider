@@ -44,7 +44,7 @@ class Slides
 	 *
 	 * @return Slides
 	 */
-	public function init( $args ) {
+	public static function init( $args ) {
 		return new self( $args );
 	}
 
@@ -84,6 +84,9 @@ class Slides
 	 * @return array
 	 */
 	public function get_slides() {
+		if ( empty( $this->args['slides'] ) ) {
+			return false;
+		}
 		return explode( ',', $this->args['slides'] );
 	}
 
@@ -93,6 +96,8 @@ class Slides
 	 * @return string
 	 */
 	public function images() {
+
+		$slider_image = '';
 		foreach ( $this->get_slides() as $slide ) {
 
 			$slide = intval( $slide );
@@ -127,6 +132,12 @@ class Slides
 	 * Get the Slider.
 	 */
 	public function get() {
+		if ( false === $this->get_slides() ) {
+			return sprintf(
+				'<code style="background-color:#000; color:#fff; padding:20px;">
+				Slim Slider could not find the slides</code>'
+			);
+		}
 	    return $this->slider_main();
 	}
 
