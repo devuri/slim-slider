@@ -33,7 +33,7 @@ class Slides
 		);
 		$this->args = wp_parse_args( $args, $defaults );
 
-		wp_localize_script( 'slim-slider-init', 'SlimSliderData', $this->args );
+		wp_localize_script( 'slim-slider', 'SlimSliderData', $this->args );
 
 	}
 
@@ -81,11 +81,13 @@ class Slides
 	/**
 	 * Slides.
 	 *
+	 * Get slides by ID, if not just use the slides defined.
+	 *
 	 * @return array
 	 */
 	public function get_slides() {
 		if ( empty( $this->args['slides'] ) ) {
-			return false;
+			return array_keys( SlimSlide::slides() );
 		}
 		return explode( ',', $this->args['slides'] );
 	}
@@ -119,7 +121,7 @@ class Slides
 	 */
 	public function image_slides() {
 		return sprintf(
-			'<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:%1$spx;height:%1$spx;overflow:hidden;">
+			'<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;">
 				%3$s
 			</div>',
 			$this->args['width'],
