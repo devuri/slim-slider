@@ -128,13 +128,7 @@ class Slides
 	 * Get the Slider.
 	 */
 	public function get() {
-		if ( false === $this->get_slides() ) {
-			return sprintf(
-				'<code style="background-color:#000; color:#fff; padding:20px;">
-				Slim Slider could not find the slides</code>'
-			);
-		}
-	    return $this->slider_main();
+        return $this->slider_main();
 	}
 
 }
