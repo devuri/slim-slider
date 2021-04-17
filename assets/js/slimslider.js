@@ -1,10 +1,12 @@
 
+// get current slider data.
 var slimsliderID = SlimSliderData;
 
+// Transitions.
 var _SlideshowTransitions = [
 	{
-		$Duration: 400,
-		$Opacity: 2
+		$Duration: parseInt( slimsliderID.duration ), // 400.
+		$Opacity: parseInt( slimsliderID.opacity ), // 2.
 	}
 ];
 
@@ -21,9 +23,10 @@ var slimslider_options = {
 	 */
 	$AutoPlay: 4,
 	$PauseOnHover: 1,
-	$SlideDuration: 800, // duration (in milliseconds)
-	$FillMode: 0, // 0: stretch 1: contain 2: cover 4: actual size 5: contain
-	$SlideHeight: slimsliderID.height,
+	$PlayOrientation: 1, // 1: horizental 2: vertical
+	$SlideDuration: parseInt( slimsliderID.swipe ), // swipe animation duration (in milliseconds)
+	$FillMode: parseInt( slimsliderID.fill ), // 0: stretch 1: contain 2: cover 4: actual size 5: contain
+	$SlideHeight: parseInt( slimsliderID.height ),
 	$SlideEasing: $Jease$.$OutQuint,
 	$SlideshowOptions: {
 		$Class: $JssorSlideshowRunner$,
@@ -72,5 +75,5 @@ slim_slider_init = function() {
  *
  * Creates the slider output.
  */
-var new_slimslider = new $JssorSlider$( "slim_slider_main_" + slimsliderID.id, slimslider_options );
+var new_slimslider = new $JssorSlider$( "slimslider_" + slimsliderID.id, slimslider_options );
 slim_slider_init();

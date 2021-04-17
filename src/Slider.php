@@ -31,7 +31,7 @@ final class Slider
 			function( $columns ) {
 				unset( $columns['date'] );
 				$columns['slide_image'] = __( 'Slider Image', 'slim-slider' );
-				$columns['slide_id']  = __( 'ID', 'slim-slider' );
+				$columns['slide_id']    = __( 'ID', 'slim-slider' );
 				return $columns;
 			}
 		);
@@ -106,11 +106,15 @@ final class Slider
 	public function slimslider( $atts ) {
 		$atts = shortcode_atts(
 			array(
-				'id'     => '904562',
-				'width'  => '1920',
-				'height' => '740',
-				'nav'    => 'ab',
-				'slides' => array(),
+				'id'       => '904562',
+				'width'    => '1920',
+				'height'   => '740',
+				'nav'      => 'ab',
+				'swipe'    => '800', // swipe animation duration.
+				'fill'     => 'stretch',
+				'duration' => '400', // Transition speed.
+				'opacity'  => '2', // Transition Opacity.
+				'slides'   => array(),
 			),
 			$atts,
 			'slim_slider'
