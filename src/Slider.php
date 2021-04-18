@@ -19,7 +19,7 @@ final class Slider
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.5.1';
+	const VERSION = '0.6.0';
 
 	/**
 	 * [__construct description]
