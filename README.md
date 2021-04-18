@@ -45,7 +45,7 @@ height    | 740            | Height of every slide in pixels
 nav       | ab             | Navigation type. b: bullet navigator or a: arrow navigator  
 swipe     | 800            | Swipe animation duration (in milliseconds).
 fill      | stretch        | Type of image fill for the slide.
-duration  | 300            | Transition speed.
+duration  | 300            | Transition speed (in milliseconds).
 opacity   | 2              | Transition Opacity.
 speed     | 3000           | Slider speed (in milliseconds).
 slides    | -              | List of slide IDs
