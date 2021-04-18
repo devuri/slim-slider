@@ -24,6 +24,14 @@ In some cases, you may need to manually upload a plugin directly using an SFTP c
 The Slim Slider shortcode can be used as is like this: `[slim_slider]`, this will simply
 create the slideshow with all defined slides that are published.
 
+### Create Slides
+To get started you will need to create the slides for the slider.
+
+This can be done in WordPress admin menu select `Add New` under `Slim Slides` Menu.
+
+![slim-slide-menu](https://user-images.githubusercontent.com/4777400/115136071-d9c62980-9fe2-11eb-95a3-c46d1db594ee.png)
+
+
 The slider shortcode can also be used with the slide IDs, Like this: `[slim_slider slides="135,654,168,201"]`,
 In this case only the slide IDs that have been included will be included in the slideshow.
 
