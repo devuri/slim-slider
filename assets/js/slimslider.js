@@ -22,6 +22,7 @@ var slimslider_options = {
 	 * 12: stop on click or user navigation
 	 */
 	$AutoPlay: 4,
+	$Idle: parseInt( slimsliderID.speed ), // Interval (in milliseconds) for next slide if the slider is auto playing
 	$PauseOnHover: 1,
 	$PlayOrientation: 1, // 1: horizental 2: vertical
 	$SlideDuration: parseInt( slimsliderID.swipe ), // swipe animation duration (in milliseconds)

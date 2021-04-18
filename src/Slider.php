@@ -78,7 +78,7 @@ final class Slider
 	public function enqueue() {
 		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/slimslider.css', array(), self::VERSION, 'all' );
 		wp_enqueue_script( 'slim-slider-jssor', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
-		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.min.js', array( 'slim-slider-jssor' ), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.js', array( 'slim-slider-jssor' ), self::VERSION, true );
 	}
 
     /**
@@ -111,8 +111,9 @@ final class Slider
 				'nav'      => 'ab',
 				'swipe'    => '800', // swipe animation duration.
 				'fill'     => 'stretch',
-				'duration' => '400', // Transition speed.
+				'duration' => '300', // Transition speed.
 				'opacity'  => '2', // Transition Opacity.
+				'speed'    => '3000', // Slider speed (in milliseconds).
 				'slides'   => array(),
 			),
 			$atts,
