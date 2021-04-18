@@ -1,4 +1,4 @@
-## Slim Slider
+## Slim Slider, WordPress Slider Plugin
 The Slim Slider plugin is a simple WordPress slider plugin that allows you to add a slider in posts and pages using a simple Shortcode.
 
 ```bash
