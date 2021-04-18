@@ -23,6 +23,10 @@ final class SlimSlide
 
 		$slides = new Data( 'slimslide' );
 
+		if ( ! $slides ) {
+			return array();
+		}
+
 		if ( $array ) {
 			return $slides->list();
 		}

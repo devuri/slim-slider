@@ -41,6 +41,9 @@ class Slides
 	 * Get the Slider.
 	 */
 	public function get() {
+		if ( empty( $this->get_slides() ) ) {
+			return false;
+		}
 		return $this->slider_main();
 	}
 
@@ -85,7 +88,20 @@ class Slides
 		if ( empty( $this->args['slides'] ) ) {
 			return array_keys( SlimSlide::slides() );
 		}
-		return explode( ',', $this->args['slides'] );
+		return $this->user_slides();
+	}
+
+	/**
+	 * Get user defined slides.
+	 *
+	 * @return array
+	 */
+	protected function user_slides() {
+		$slides = explode( ',', $this->args['slides'] );
+		foreach ( $slides as $slide ) {
+			if ( ! get_post( $slide ) ) return array();
+		}
+		return $slides;
 	}
 
 	/**
