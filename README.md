@@ -31,6 +31,18 @@ This can be done in WordPress admin menu select `Add New` under `Slim Slides` Me
 
 ![slim-slide-menu](https://user-images.githubusercontent.com/4777400/115136071-d9c62980-9fe2-11eb-95a3-c46d1db594ee.png)
 
+Here you can add the new slide with the following information:
+
+* Slide Title, the title of your slide.
+* Slide ID, the ID for the slide can be used in the shortcode see options section.
+* Slide Heading, can be the same as slide title.
+* Alt Text, used to define image alt attribute
+* Description, the slide description
+* Slide Image, the slide image. 
+* Slide Url, use to link the current slide to any valid http or https url ( other protocols are not supported).
+
+![slide-information](https://user-images.githubusercontent.com/4777400/115136375-05e2aa00-9fe5-11eb-8f11-31bec07b6a49.png)
+
 
 The slider shortcode can also be used with the slide IDs, Like this: `[slim_slider slides="135,654,168,201"]`,
 In this case only the slide IDs that have been included will be included in the slideshow.
