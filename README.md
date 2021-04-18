@@ -50,6 +50,7 @@ opacity   | 2              | Transition Opacity.
 speed     | 3000           | Slider speed (in milliseconds).
 slides    | -              | List of slide IDs
 
+
 > Fill type options
 
 | Fill   |  Description |
