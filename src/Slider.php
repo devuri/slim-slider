@@ -19,7 +19,7 @@ final class Slider
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.5.0';
+	const VERSION = '0.5.1';
 
 	/**
 	 * [__construct description]
@@ -31,7 +31,7 @@ final class Slider
 			function( $columns ) {
 				unset( $columns['date'] );
 				$columns['slide_image'] = __( 'Slider Image', 'slim-slider' );
-				$columns['slide_id']  = __( 'ID', 'slim-slider' );
+				$columns['slide_id']    = __( 'ID', 'slim-slider' );
 				return $columns;
 			}
 		);
@@ -78,7 +78,7 @@ final class Slider
 	public function enqueue() {
 		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/slimslider.css', array(), self::VERSION, 'all' );
 		wp_enqueue_script( 'slim-slider-jssor', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
-		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.min.js', array( 'slim-slider-jssor' ), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.js', array( 'slim-slider-jssor' ), self::VERSION, true );
 	}
 
     /**
@@ -106,11 +106,15 @@ final class Slider
 	public function slimslider( $atts ) {
 		$atts = shortcode_atts(
 			array(
-				'id'     => '904562',
-				'width'  => '1920',
-				'height' => '740',
-				'nav'    => 'ab',
-				'slides' => array(),
+				'id'       => '904562',
+				'height'   => '740',
+				'nav'      => 'ab',
+				'swipe'    => '800', // swipe animation duration.
+				'fill'     => 'stretch',
+				'duration' => '300', // Transition speed.
+				'opacity'  => '2', // Transition Opacity.
+				'speed'    => '3000', // Slider speed (in milliseconds).
+				'slides'   => array(),
 			),
 			$atts,
 			'slim_slider'

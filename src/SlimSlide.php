@@ -17,8 +17,8 @@ final class SlimSlide
 	 *
 	 * @param bool $array .
 	 *
-	 * @return string
-	 */
+	 * @return array
+     */
 	public static function slides( $array = true ) {
 
 		$slides = new Data( 'slimslide' );
