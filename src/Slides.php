@@ -4,6 +4,13 @@ namespace SlimSlider;
 
 class Slides
 {
+	use Asset;
+
+	/**
+	 * Define Version
+	 */
+	const VERSION = '0.7.1';
+
 	/**
 	 * Shortcode $args
 	 *
@@ -20,9 +27,6 @@ class Slides
 		$this->args = $args;
 		$this->args['fill']  = $this->fillmode();
 		$this->args['width'] = '1920';
-
-		// pass on options to slimslider.js.
-		wp_localize_script( 'slim-slider', 'SlimSliderData', $this->options() );
 
 	}
 
@@ -44,7 +48,24 @@ class Slides
 		if ( empty( $this->get_slides() ) ) {
 			return false;
 		}
-		return $this->slider_main();
+		return $this;
+	}
+
+	/**
+	 * Output the Slider.
+	 */
+	public function output() {
+		/**
+		 * Enqueue the slider assets.
+		 */
+		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/slimslider.css', array(), self::VERSION, 'all' );
+		wp_enqueue_script( 'slim-slider-jssor', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
+		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.js', array( 'slim-slider-jssor' ), self::VERSION, true );
+
+		// pass on options to slimslider.js.
+		wp_localize_script( 'slim-slider', 'SlimSliderData', $this->options() );
+
+		echo $this->slider_main(); // @codingStandardsIgnoreLine.
 	}
 
 	/**
