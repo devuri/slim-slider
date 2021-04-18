@@ -12,7 +12,7 @@
  * Plugin Name:       Slim Slider
  * Plugin URI:        https://switchwebdev.com/wordpress-plugins/
  * Description:       Premium Simple WordPress slider use [slim_slider] shortcode.
- * Version:           0.6.1
+ * Version:           0.7.1
  * Requires at least: 3.4
  * Requires PHP:      7.1
  * Author:            Uriel Wilson
@@ -41,3 +41,6 @@ define( 'SLIMSLIDER_URL', plugins_url( '/', __FILE__ ) );
 
 // setup the slider.
 ( new SlimSlider\Slider() )->init();
+
+// ready.
+SlimSlider\Slider::is_ready();

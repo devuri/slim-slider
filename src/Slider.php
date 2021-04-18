@@ -14,13 +14,6 @@ use DevUri\Meta\Data;
 final class Slider
 {
 
-	use Asset;
-
-	/**
-	 * Define Version
-	 */
-	const VERSION = '0.6.1';
-
 	/**
 	 * [__construct description]
 	 */
@@ -53,6 +46,15 @@ final class Slider
 	}
 
 	/**
+	 * Slider loaded
+	 *
+	 * @return void
+	 */
+	public static function is_ready() {
+		do_action( 'slim_slider_loaded' );
+	}
+
+	/**
 	 * Init
 	 *
 	 * @return void
@@ -68,17 +70,6 @@ final class Slider
 
 		// meta data.
 		new MetaBox( new Slide( 'slimslide' ) );
-	}
-
-	/**
-	 * Enqueue
-	 *
-	 * @return void
-	 */
-	public function enqueue() {
-		wp_enqueue_style( 'slim-slider', Asset::uri() . '/css/slimslider.css', array(), self::VERSION, 'all' );
-		wp_enqueue_script( 'slim-slider-jssor', Asset::uri() . '/js/slim.jssor.slider.min.js', array( 'jquery' ), self::VERSION, true );
-		wp_enqueue_script( 'slim-slider', Asset::uri() . '/js/slimslider.js', array( 'slim-slider-jssor' ), self::VERSION, true );
 	}
 
     /**
@@ -106,15 +97,15 @@ final class Slider
 	public function slimslider( $atts ) {
 		$atts = shortcode_atts(
 			array(
-				'id'       => '904562',
-				'height'   => '740',
-				'nav'      => 'ab',
-				'swipe'    => '800', // swipe animation duration.
-				'fill'     => 'stretch',
-				'duration' => '300', // Transition speed.
-				'opacity'  => '2', // Transition Opacity.
-				'speed'    => '3000', // Slider speed (in milliseconds).
-				'slides'   => array(),
+				'id'       => '904562',  // The slider ID.
+				'height'   => '740',     // Height of every slide in pixels.
+				'nav'      => 'ab',      // Navigation type, b: bullet navigator or a: arrow navigator.
+				'swipe'    => '800',     // Swipe animation duration (in milliseconds).
+				'fill'     => 'stretch', // Type of image fill for the slide.
+				'duration' => '300',     // Transition speed.
+				'opacity'  => '2',       // Transition Opacity.
+				'speed'    => '3000',    // Slider speed (in milliseconds).
+				'slides'   => array(),   // List of slide IDs.
 			),
 			$atts,
 			'slim_slider'
@@ -124,12 +115,15 @@ final class Slider
 		 * Lets check if we have slides.
 		 */
 		if ( ! Slides::init( $atts )->get() ) {
-			return sprintf( '<div style="display: block; text-align: center; padding:12px;">No slides to show.</div>' );
+			return '<div style="display: block; text-align: center; padding:12px;">No slides to show.</div>';
 		}
 
-		$this->enqueue();
+		ob_start();
 
-		echo Slides::init( $atts )->get(); // @codingStandardsIgnoreLine.
+			Slides::init( $atts )->get()->output();
+
+		return ob_get_clean();
+
 	}
 
 }
