@@ -36,9 +36,8 @@ Here you can add the new slide with the following information:
 * Slide Title, the title of your slide.
 * Slide ID, the ID for the slide can be used in the shortcode see options section.
 * Slide Heading, can be the same as slide title.
-* Alt Text, used to define image alt attribute
-* Description, the slide description
-* Slide Image, the slide image. 
+* Alt Text, used to define image alt attribute.
+* Description, the slide description.
 * Slide Url, use to link the current slide to any valid http or https url ( other protocols are not supported).
 
 ![slide-information](https://user-images.githubusercontent.com/4777400/115136375-05e2aa00-9fe5-11eb-8f11-31bec07b6a49.png)
@@ -99,5 +98,4 @@ WP Slim Slider is licensed under The [GPL-2.0 License](https://github.com/devuri
 Slim Slider WordPress Plugin, Copyright 2021 Uriel Wilson.
 Slim Slider is distributed under the terms of the GNU GPL.
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
-
 
