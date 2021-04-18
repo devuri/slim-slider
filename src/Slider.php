@@ -119,6 +119,14 @@ final class Slider
 			$atts,
 			'slim_slider'
 		);
+
+		/**
+		 * Lets check if we have slides.
+		 */
+		if ( ! Slides::init( $atts )->get() ) {
+			return sprintf( '<div style="display: block; text-align: center; padding:12px;">No slides to show.</div>' );
+		}
+
 		$this->enqueue();
 
 		echo Slides::init( $atts )->get(); // @codingStandardsIgnoreLine.
