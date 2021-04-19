@@ -16,7 +16,7 @@ final class SliderAdmin {
 			'Get Started',
 			'manage_options',
 			'slim-slider-shortcode',
-			array( SliderAdmin::class, 'settings_page' )
+			[ SliderAdmin::class, 'settings_page' ]
 		);
 	}
 
@@ -24,6 +24,7 @@ final class SliderAdmin {
 	 * Page.
 	 */
 	public static function settings_page() {
+		self::styles();
 		self::page_header();
 		self::page_content();
 		self::page_footer();
@@ -33,7 +34,6 @@ final class SliderAdmin {
 	 * Page header.
 	 */
 	protected static function page_header() {
-		self::styles();
 		?>
 		<div id="slsl-important-notice" style="background-color:#569769;">
 			<span class="slsl-notice-message">
@@ -49,7 +49,7 @@ final class SliderAdmin {
 			  	<div class="slsl-child">
 			<div class="slsl-grid-item">
 			    <div class="slsl-padding">
-					<p><!---innner paragraph -->
+			<p><!---innner paragraph -->
 		<?php
 	}
 
