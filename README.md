@@ -80,11 +80,11 @@ cover    | Keep aspect ratio and cover whole slide.    |
 actual   | Keep the actual image size.                 |
 contain  | Large image and actual size for small image.|
 
-***Important***
-> Slim Slider only supports one slide per page or post.
 
 Thats it, you're done!
 
+***Important***
+> Slim Slider only supports one slide per page or post.
 
 
 #### Credits
