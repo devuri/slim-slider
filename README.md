@@ -86,7 +86,6 @@ contain  | Large image and actual size for small image.|
 Thats it, you're done!
 
 
-**note**: Slim Slider only supports one slider per page or post.
 
 #### Credits
 - Slim Slider uses the [jssor slider](https://github.com/jssor/slider/blob/master/js/jssor.slider.min.js)
