@@ -3,6 +3,7 @@
 namespace SlimSlider;
 
 use DevUri\Meta\MetaBox;
+use SlimSlider\Admin\SliderAdmin;
 use SlimSlider\MetaView\Slide;
 use DevUri\Meta\Data;
 
@@ -18,6 +19,9 @@ final class Slider
 	 * [__construct description]
 	 */
 	public function __construct() {
+
+		// Get Started Page.
+		add_action( 'admin_menu', [ SliderAdmin::class, 'add_page' ] );
 
 		// add IDs to Items.
 		add_filter( 'manage_slimslide_posts_columns',
