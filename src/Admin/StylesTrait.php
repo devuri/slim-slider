@@ -17,6 +17,7 @@ trait StylesTrait {
 		}
 		.slsl-container ul li {
 			background-color: #eef1f3;
+			color: #82807e;
 		}
 		.slsl-container code {
 			color: #f44336;
