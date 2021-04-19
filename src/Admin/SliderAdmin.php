@@ -43,13 +43,13 @@ final class SliderAdmin {
 		<header class="slsl-header">
 			<h2>Slim Slider: Getting Started </h2>
 		</header>
-		<div class="wrap"><h2></h2>
+		<div class="wrap">
 		</div><!---admin notices -->
 			<div class="slsl-container">
 			  	<div class="slsl-child">
-			    	<div class="slsl-grid-item">
-			      		<div class="slsl-padding">
-							<p><!---innner paragraph -->
+			<div class="slsl-grid-item">
+			    <div class="slsl-padding">
+					<p><!---innner paragraph -->
 		<?php
 	}
 
@@ -59,10 +59,10 @@ final class SliderAdmin {
 	protected static function page_footer() {
 		?>
 		</p><!---innner paragraph -->
-					</div><!---wll-padding -->
-				</div><!---wll-grid-item -->
-			</div><!---wll-padding -->
-		</div><!--wll-container-->
+			</div><!---slsl-padding -->
+				</div><!---slsl-grid-item -->
+			</div><!---slsl-padding -->
+		</div><!--slsl-container-->
 		<div style="padding-left: 20px; padding-right: 40px;color: #b9b9b9;font-weight: 300;" class="">
 			<hr/>
 				<?php bloginfo( 'name' ); ?>
