@@ -170,7 +170,6 @@ class Slides
 	 */
 	protected function fillmode() {
 		/**
-		 * [switch description]
 		 * 0: stretch
 		 * 1: contain
 		 * 2: cover

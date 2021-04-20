@@ -11,8 +11,8 @@
  * @wordpress-plugin
  * Plugin Name:       Slim Slider
  * Plugin URI:        https://switchwebdev.com/wordpress-plugins/
- * Description:       Premium Simple WordPress slider use [slim_slider] shortcode.
- * Version:           0.7.4
+ * Description:       Slim Slider is a simple slider plugin that allows you to add a slider in posts and pages.
+ * Version:           0.7.5
  * Requires at least: 3.4
  * Requires PHP:      7.1
  * Author:            Uriel Wilson
