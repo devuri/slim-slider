@@ -21,7 +21,7 @@ final class Slider
 	public function __construct() {
 
 		// Get Started Page.
-		add_action( 'admin_menu', [ SliderAdmin::class, 'add_page' ] );
+		$this->add_admin_page();
 
 		// add IDs to Items.
 		add_filter( 'manage_slimslide_posts_columns',
@@ -59,6 +59,15 @@ final class Slider
 	}
 
 	/**
+	 * Slider Getting Started Page.
+	 *
+	 * @return void
+	 */
+	public function add_admin_page() {
+		new SliderAdmin( 'Getting Started' );
+	}
+
+	/**
 	 * Init
 	 *
 	 * @return void
@@ -67,10 +76,10 @@ final class Slider
 
 		// dont render the shortcode in admin.
 		if ( ! is_admin() ) {
-			add_shortcode( 'slim_slider', array( $this, 'slimslider' ) );
+			add_shortcode( 'slim_slider', [ $this, 'slimslider' ] );
 		}
 		// post type.
-		add_action( 'init', array( SlimSlide::class, 'slider_post_type' ) );
+		add_action( 'init', [ SlimSlide::class, 'slider_post_type' ] );
 
 		// meta data.
 		new MetaBox( new Slide( 'slimslide' ) );

@@ -6,7 +6,7 @@ trait ContentTrait {
 	/**
 	 * Page Content.
 	 */
-	public static function page_content() {
+	public function content() {
 		?>
 		<h4 class="title">Slim Slider Shortcode Options and Usage</h4>
 			<hr>

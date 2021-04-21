@@ -9,7 +9,7 @@ class Slides
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.7.3';
+	const VERSION = '0.7.4';
 
 	/**
 	 * Shortcode $args
@@ -170,7 +170,6 @@ class Slides
 	 */
 	protected function fillmode() {
 		/**
-		 * [switch description]
 		 * 0: stretch
 		 * 1: contain
 		 * 2: cover

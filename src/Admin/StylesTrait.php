@@ -6,7 +6,7 @@ trait StylesTrait {
 	/**
 	 * Styles.
 	 */
-	protected static function styles() {
+	protected function styles() {
 		?>
 		<style media="screen">
 		#slsl-important-notice {
