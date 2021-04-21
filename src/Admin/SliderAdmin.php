@@ -7,33 +7,50 @@ final class SliderAdmin {
 	use StylesTrait, ContentTrait;
 
 	/**
+	 * Page title.
+	 *
+	 * @var string .
+	 */
+	protected $admin_title;
+
+	/**
+	 * The main __construct.
+	 *
+	 * @param string $title the page title.
+	 */
+	public function __construct( $title ) {
+		$this->admin_title = $title;
+		add_action( 'admin_menu', [ $this, 'add_page' ], 99 );
+	}
+
+	/**
 	 * Getting Started.
 	 */
-	public static function add_page() {
+	public function add_page() {
 		add_submenu_page(
 			'edit.php?post_type=slimslide',
 			'Slim Slider Setup',
 			'Get Started',
 			'manage_options',
 			'slim-slider-shortcode',
-			[ SliderAdmin::class, 'settings_page' ]
+			[ $this, 'settings_page' ]
 		);
 	}
 
 	/**
 	 * Page.
 	 */
-	public static function settings_page() {
-		self::styles();
-		self::page_header();
-		self::page_content();
-		self::page_footer();
+	public function settings_page() {
+		$this->styles();
+		$this->header();
+		$this->content();
+		$this->footer();
 	}
 
 	/**
 	 * Page header.
 	 */
-	protected static function page_header() {
+	protected function header() {
 		?>
 		<div id="slsl-important-notice" style="background-color:#569769;">
 			<span class="slsl-notice-message">
@@ -56,7 +73,7 @@ final class SliderAdmin {
 	/**
 	 * Page Footer.
 	 */
-	protected static function page_footer() {
+	protected function footer() {
 		?>
 		</p><!---innner paragraph -->
 			</div><!---slsl-padding -->
