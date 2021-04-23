@@ -7,9 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'WPAdminPage\\' => array($vendorDir . '/devuri/wp-admin-page/src'),
-    'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
-    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
-    'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
     'SlimSlider\\' => array($baseDir . '/src'),
     'DevUri\\Meta\\' => array($vendorDir . '/devuri/cpt-meta-box/src'),
 );

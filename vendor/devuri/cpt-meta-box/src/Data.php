@@ -100,6 +100,7 @@ class Data
      * Retrieves a post meta field for the given post ID.
      *
      * @param $ID
+     * @param $name the meta name to retreive.
      * @return array .
      * @link https://developer.wordpress.org/reference/functions/get_post_meta/
      */
