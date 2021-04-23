@@ -1,3 +1,5 @@
+> **Note:** This is the development version and contains features that may be in various stages of development. If you want to use this on a live website download here: [Slim Slider](https://wordpress.org/plugins/slim-slider/).
+
 ## Slim Slider, WordPress Slider Plugin
 The Slim Slider plugin is a simple WordPress slider plugin that allows you to add a slider in posts and pages using a simple Shortcode.
 
