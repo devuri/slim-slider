@@ -137,11 +137,12 @@ class Slides
 
 			$slide = intval( $slide );
 			$meta = $this->slide_data( $slide );
+			$alt = isset( $meta['alt'] ) ? $meta['alt'] : get_the_title( $meta['ID'] );
 
 		    if ( is_null( $meta['url'] ) || empty( $meta['url'] ) ) {
-		        $slider_image .= '<div><img data-u="image" alt="' . $meta['alt'] . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></div>';
+		        $slider_image .= '<div><img data-u="image" alt="' . $alt . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></div>';
 		    } else {
-				$slider_image .= '<div><a href="' . $meta['url'] . '"><img data-u="image" alt="' . $meta['alt'] . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></a></div>';
+				$slider_image .= '<div><a href="' . $meta['url'] . '"><img data-u="image" alt="' . $alt . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></a></div>';
 		    }
 	    }
 		return $slider_image;

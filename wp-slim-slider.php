@@ -24,9 +24,7 @@
  */
 
 // deny direct access.
-if ( ! defined( 'WPINC' ) ) {
-    die;
-}
+if ( ! defined( 'WPINC' ) ) die;
 
 /**
  * Load composer
