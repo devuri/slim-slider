@@ -27,7 +27,6 @@ class Slides
 		$this->args = $args;
 		$this->args['fill']  = $this->fillmode();
 		$this->args['width'] = '1920';
-
 	}
 
 	/**

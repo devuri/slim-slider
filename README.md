@@ -68,6 +68,7 @@ duration  | 300            | Transition speed (in milliseconds).
 opacity   | 2              | Transition Opacity.
 speed     | 3000           | Slider speed (in milliseconds).
 slides    | -              | List of slide IDs
+get       | false          | Get the slide when in do_shortcode() uses: 'true' or 'yes'
 
 
 > Fill type options
@@ -97,4 +98,3 @@ WP Slim Slider is licensed under The [GPL-2.0 License](https://github.com/devuri
 Slim Slider WordPress Plugin, Copyright 2021 Uriel Wilson.
 Slim Slider is distributed under the terms of the GNU GPL.
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
-
