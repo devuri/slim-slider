@@ -9,7 +9,7 @@ class Slides
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.8.4';
+	const VERSION = '0.8.5';
 
 	/**
 	 * Shortcode $args
