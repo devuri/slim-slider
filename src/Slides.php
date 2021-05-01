@@ -9,7 +9,7 @@ class Slides
 	/**
 	 * Define Version
 	 */
-	const VERSION = '0.8.5';
+	const VERSION = '0.8.6';
 
 	/**
 	 * Shortcode $args
@@ -27,7 +27,6 @@ class Slides
 		$this->args = $args;
 		$this->args['fill']  = $this->fillmode();
 		$this->args['width'] = '1920';
-
 	}
 
 	/**

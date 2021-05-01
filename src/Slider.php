@@ -119,6 +119,7 @@ final class Slider
 				'opacity'  => '2',       // Transition Opacity.
 				'speed'    => '3000',    // Slider speed (in milliseconds).
 				'slides'   => array(),   // List of slide IDs.
+				'get'      => false,     // Get the slide when do_shortcode().
 			),
 			$atts,
 			'slim_slider'
@@ -129,6 +130,16 @@ final class Slider
 		 */
 		if ( ! Slides::init( $atts )->get() ) {
 			return '<div style="display: block; text-align: center; padding:12px;">No slides to show.</div>';
+		}
+
+		/**
+		 * Just Get the slider.
+		 *
+		 * Useful when using do_shortcode()
+		 */
+		if ( 'true' === $atts['get'] || 'yes' === $atts['get'] ) {
+			Slides::init( $atts )->get()->output();
+			return;
 		}
 
 		ob_start();
