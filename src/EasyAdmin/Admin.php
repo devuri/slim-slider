@@ -14,9 +14,10 @@ final class Admin {
 	/**
 	 * The main __construct.
 	 *
-	 * @param string $title the page title.
+	 * @param AdminPage $page the page object.
 	 */
 	public function __construct( AdminPage $page ) {
+		if ( ! is_admin() ) return false;
 		$this->admin_page = $page;
 		add_action( 'admin_menu', [ $this, 'submenu_page' ], 99 );
 	}
@@ -39,7 +40,6 @@ final class Admin {
 	 * Page.
 	 */
 	public function settings_page() {
-		//$this->admin_page->styles();
 		$this->admin_page->header();
 		do_action( 'esa_before_content' );
 		$this->admin_page->content();
