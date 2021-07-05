@@ -2,6 +2,8 @@
 
 namespace SlimSlider;
 
+use DevUri\Meta\Data;
+
 class Slides
 {
 	use Asset;
@@ -68,13 +70,20 @@ class Slides
 	}
 
 	/**
-	 * Get Slide meta info.
-	 *
-	 * @param int $id slide item ID.
-	 * @return array
-	 */
+     * Get The Slide.
+     *
+     * Get meta data for the current slide.
+     *
+     * @param  int $id the slide ID.
+     * @return array
+     */
 	protected function slide_data( $id ) {
-		return ( new Slider() )->get_slide( $id );
+
+		if ( ! get_post( $id ) ) return false;
+
+		$slide = new Data( 'slimslide' );
+
+		return $slide->meta( $id, 'slide_meta' );
 	}
 
 	/**
