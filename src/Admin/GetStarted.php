@@ -7,6 +7,16 @@ use SlimSlider\EasyAdmin\AdminPage;
 class GetStarted extends AdminPage {
 
 	/**
+	 * Set the parent slug.
+	 *
+	 * @return string the slug.
+	 */
+	public function get_parent_slug() {
+		$this->parent_slug = 'edit.php?post_type=slimslide';
+		return $this->parent_slug;
+	}
+
+	/**
 	 * Page Content.
 	 */
 	public function content() {

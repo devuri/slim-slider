@@ -12,14 +12,28 @@ final class Admin {
 	protected $admin_page;
 
 	/**
+	 * Parent slug.
+	 *
+	 * @var string .
+	 */
+	protected $parent_slug;
+
+	/**
 	 * The main __construct.
 	 *
 	 * @param AdminPage $page the page object.
 	 */
 	public function __construct( AdminPage $page ) {
 		if ( ! is_admin() ) return false;
-		$this->admin_page = $page;
-		add_action( 'admin_menu', [ $this, 'submenu_page' ], 99 );
+		$this->admin_page  = $page;
+		$this->parent_slug = $page->get_parent_slug();
+
+		if ( is_null( $this->parent_slug ) ) {
+			add_menu_page( 'admin_menu', [ $this, 'menu_page' ], 99 );
+		} else {
+			add_action( 'admin_menu', [ $this, 'submenu_page' ], 99 );
+		}
+
 	}
 
 	/**
@@ -27,10 +41,10 @@ final class Admin {
 	 */
 	public function submenu_page() {
 		add_submenu_page(
-			'edit.php?post_type=slimslide',
+			$this->parent_slug,
 			'Slim Slider Setup',
 			'Get Started',
-			'manage_options',
+			$this->admin_page->capability,
 			$this->admin_page->page_slug,
 			[ $this, 'settings_page' ]
 		);
