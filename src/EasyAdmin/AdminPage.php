@@ -1,64 +1,60 @@
 <?php
 
-namespace SlimSlider\Admin;
+namespace SlimSlider\EasyAdmin;
 
-final class SliderAdmin {
-
-	use StylesTrait, ContentTrait;
+abstract class AdminPage
+{
+	use StylesTrait;
 
 	/**
 	 * Page title.
 	 *
 	 * @var string .
 	 */
-	protected $admin_title;
+	public $page_title;
+
+	/**
+	 * Page slug.
+	 *
+	 * @var string .
+	 */
+	public $page_slug;
 
 	/**
 	 * The main __construct.
 	 *
 	 * @param string $title the page title.
 	 */
-	public function __construct( $title ) {
-		$this->admin_title = $title;
-		add_action( 'admin_menu', [ $this, 'add_page' ], 99 );
+	public function __construct( $title, $page_styles = true ) {
+		$this->page_title = $title;
+		$this->page_slug = sanitize_title( $title );
+
+		// load css styles.
+		if ( $page_styles ) {
+			add_action( 'esa_head', [ $this, 'page_styles' ] );
+		}
+
 	}
 
 	/**
-	 * Getting Started.
+	 * Page Content.
 	 */
-	public function add_page() {
-		add_submenu_page(
-			'edit.php?post_type=slimslide',
-			'Slim Slider Setup',
-			'Get Started',
-			'manage_options',
-			'slim-slider-shortcode',
-			[ $this, 'settings_page' ]
-		);
-	}
-
-	/**
-	 * Page.
-	 */
-	public function settings_page() {
-		$this->styles();
-		$this->header();
-		$this->content();
-		$this->footer();
-	}
+	abstract function content();
 
 	/**
 	 * Page header.
 	 */
-	protected function header() {
+	public function header() {
+		do_action( 'esa_head' );
 		?>
 		<div id="slsl-important-notice" style="background-color:#569769;">
 			<span class="slsl-notice-message">
-			    <!-- notes -->
+				<?php do_action( 'esa_header_message' ); ?>
 			</span>
 		</div>
 		<header class="slsl-header">
-			<h2>Slim Slider: Getting Started </h2>
+			<h2><?php echo sanitize_text_field( $this->page_title ) ?></h2>
+			<?php do_action( 'esa_html_header' ); ?>
 		</header>
 		<div class="wrap">
 		</div><!---admin notices -->
@@ -73,7 +69,7 @@ final class SliderAdmin {
 	/**
 	 * Page Footer.
 	 */
-	protected function footer() {
+	public function footer() {
 		?>
 		</p><!---innner paragraph -->
 			</div><!---slsl-padding -->
@@ -87,5 +83,4 @@ final class SliderAdmin {
 		</div>
 		<?php
 	}
-
 }

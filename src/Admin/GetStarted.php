@@ -2,7 +2,10 @@
 
 namespace SlimSlider\Admin;
 
-trait ContentTrait {
+use SlimSlider\EasyAdmin\AdminPage;
+
+class GetStarted extends AdminPage {
+
 	/**
 	 * Page Content.
 	 */
@@ -41,23 +44,23 @@ trait ContentTrait {
 			<br>
 			<strong>Available Options:</strong><br>
 			<ul class="slsl-av-options">
-				<li><span>id="904562"</span>	- The slider ID.</li>
+				<li><span>id="904562"</span>	   - The slider ID.</li>
 				<li><span>height="740"</span>   - Height of every slide in pixels.</li>
-				<li><span>nav="ab"</span>	    - Navigation type. b: bullet navigator or a: arrow navigator</li>
-				<li><span>swipe="800"</span>    - Swipe animation duration (in milliseconds).</li>
+				<li><span>nav="ab"</span>	   - Navigation type. b: bullet navigator or a: arrow navigator</li>
+				<li><span>swipe="800"</span>	   - Swipe animation duration (in milliseconds).</li>
 				<li><span>fill="stretch"</span> - Type of image fill for the slide.</li>
 				<li><span>duration="300"</span> - Transition speed (in milliseconds).</li>
-				<li><span>opacity="2"</span>	- Transition Opacity.</li>
+				<li><span>opacity="2"</span>	   - Transition Opacity.</li>
 				<li><span>speed="3000"</span>   - Slider speed (in milliseconds).</li>
 				<li><span>slides="" </span>     - List of slide IDs.</li>
 			</ul>
 			<strong>Fill type options:</strong><br>
 			<ul class="slsl-av-options">
-				<li><span>stretch</span> Stretch the image to fit slide.</li>
-				<li><span>contain</span> Keep aspect ratio and put all inside slide.</li>
-				<li><span>cover</span>	 Keep aspect ratio and cover whole slide.</li>
-				<li><span>actual</span>	 Keep the actual image size.</li>
-				<li><span>contain</span> Large image and actual size for small image.</li>
+				<li><span>stretch</span>	Stretch the image to fit slide.</li>
+				<li><span>contain</span>	Keep aspect ratio and put all inside slide.</li>
+				<li><span>cover</span>		Keep aspect ratio and cover whole slide.</li>
+				<li><span>actual</span>	Keep the actual image size.</li>
+				<li><span>contain</span>	Large image and actual size for small image.</li>
 			</ul>
 
 			<hr>
