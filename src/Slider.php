@@ -3,7 +3,8 @@
 namespace SlimSlider;
 
 use DevUri\Meta\MetaBox;
-use SlimSlider\Admin\SliderAdmin;
+use SlimSlider\EasyAdmin\Admin;
+use SlimSlider\Admin\GetStarted;
 use SlimSlider\MetaView\Slide;
 use DevUri\Meta\Data;
 
@@ -64,7 +65,7 @@ final class Slider
 	 * @return void
 	 */
 	public function add_admin_page() {
-		new SliderAdmin( 'Getting Started' );
+		new Admin( new GetStarted( 'Slim Slider: Getting Started' ) );
 	}
 
 	/**

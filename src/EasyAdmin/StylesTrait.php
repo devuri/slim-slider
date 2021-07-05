@@ -1,12 +1,12 @@
 <?php
 
-namespace SlimSlider\Admin;
+namespace SlimSlider\EasyAdmin;
 
 trait StylesTrait {
 	/**
 	 * Styles.
 	 */
-	protected function styles() {
+	public function page_styles() {
 		?>
 		<style media="screen">
 		#slsl-important-notice {

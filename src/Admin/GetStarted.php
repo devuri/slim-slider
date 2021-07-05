@@ -2,7 +2,10 @@
 
 namespace SlimSlider\Admin;
 
-trait ContentTrait {
+use SlimSlider\EasyAdmin\AdminPage;
+
+class GetStarted extends AdminPage {
+
 	/**
 	 * Page Content.
 	 */
