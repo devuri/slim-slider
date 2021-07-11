@@ -27,33 +27,33 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '0.10.3.x-dev',
-    'version' => '0.10.3.9999999-dev',
+    'pretty_version' => '0.11.6.x-dev',
+    'version' => '0.11.6.9999999-dev',
     'aliases' => 
     array (
     ),
-    'reference' => 'e4038f3e2184050ce95c9efbad3ece9e195d72e5',
+    'reference' => '78e24cee62c69e76faf633a583813a68330a9d7a',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '0.10.3.x-dev',
-      'version' => '0.10.3.9999999-dev',
+      'pretty_version' => '0.11.6.x-dev',
+      'version' => '0.11.6.9999999-dev',
       'aliases' => 
       array (
       ),
-      'reference' => 'e4038f3e2184050ce95c9efbad3ece9e195d72e5',
+      'reference' => '78e24cee62c69e76faf633a583813a68330a9d7a',
     ),
     'devuri/cpt-meta-box' => 
     array (
-      'pretty_version' => '0.1.7',
-      'version' => '0.1.7.0',
+      'pretty_version' => '0.1.8',
+      'version' => '0.1.8.0',
       'aliases' => 
       array (
       ),
-      'reference' => '722f19e779fabf9b32cc1390dcb8047ca736d1f0',
+      'reference' => 'bc6a7d8f95da341a509da12b0c6cb1543187707f',
     ),
     'devuri/wp-admin-page' => 
     array (

@@ -1,0 +1,49 @@
+{
+    "name": "devuri/cpt-meta-box",
+    "type": "library",
+    "description": "Simple Implementation for custom meta boxes and fields for WordPress custom post types.",
+    "keywords": [
+		"wp",
+		"wordpress",
+		"meta",
+		"meta",
+		"metabox",
+		"post",
+		"type",
+		"devuri"
+	],
+    "homepage": "https://github.com/devuri/cpt-meta-box",
+    "license": "MIT",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+    "authors": [
+        {
+			"name": "Uriel Wilson",
+            "email": "support@urielwilson.com",
+            "homepage": "https://urielwilson.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+		"source": "https://github.com/devuri/cpt-meta-box",
+        "issues": "https://github.com/devuri/cpt-meta-box/issues"
+    },
+    "require": {
+		"php": "^7.1",
+		"devuri/wp-admin-page": "^3.3.2"
+    },
+	"require-dev": {
+		"symfony/var-dumper": "^5.1.4",
+		"phpunit/phpunit": "^8.0|^9.0"
+	},
+    "autoload": {
+        "psr-4": {
+            "DevUri\\Meta\\": "src"
+        }
+    },
+    "config": {
+		"preferred-install": "dist",
+        "sort-packages": true,
+		"optimize-autoloader": true
+  	}
+}
