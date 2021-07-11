@@ -6,7 +6,6 @@ use DevUri\Meta\Settings;
 
 class Slide extends Settings
 {
-
 	/**
 	 * List of protocols to allow in url.
 	 *
@@ -19,7 +18,8 @@ class Slide extends Settings
      *
      * @param array $get_meta .
      */
-	public function settings( $get_meta ): void {
+	public function settings( $get_meta ): void
+	{
 		echo self::the_id(); // @codingStandardsIgnoreLine
 		echo self::thumbnail(); // @codingStandardsIgnoreLine
 		echo self::form()->input( 'Heading', self::meta( 'heading', $get_meta ) ); // @codingStandardsIgnoreLine
@@ -34,7 +34,8 @@ class Slide extends Settings
      * @param array $post_data .
      * @return array
      */
-	public function data( $post_data ): array {
+	public function data( $post_data ): array
+	{
 		$data['heading']     = sanitize_textarea_field( $post_data['heading'] );
 		$data['alt']         = sanitize_textarea_field( $post_data['alt_text'] );
 		$data['description'] = sanitize_textarea_field( $post_data['description_textarea'] );

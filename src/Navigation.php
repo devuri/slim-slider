@@ -11,10 +11,11 @@ class Navigation
 	/**
 	 * Navigator
 	 *
-	 * @param  array $args .
+	 * @param array $args .
 	 * @return string
 	 */
-	public static function get( $args ) {
+	public static function get(array $args ): string
+    {
 
 		// Bullet Navigator.
 		if ( 'b' === $args['nav'] ) {
@@ -36,7 +37,8 @@ class Navigation
 	/**
 	 * Nav
 	 */
-	public static function nav() {
+	public static function nav(): string
+    {
 		return self::arrow_nav() . self::bullet_nav();
 	}
 
@@ -45,7 +47,8 @@ class Navigation
 	 *
 	 * @return string
 	 */
-	public static function bullet_nav() {
+	public static function bullet_nav(): string
+    {
 		return '<div data-u="navigator" class="slimslb032" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
 				<div data-u="prototype" class="i" style="width:16px;height:16px;">
 					<svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
@@ -60,7 +63,8 @@ class Navigation
 	 *
 	 * @return string
 	 */
-	public static function arrow_nav() {
+	public static function arrow_nav(): string
+    {
 		return '<div data-u="arrowleft" class="slimsla051" style="width:65px;height:65px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
 					<svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
 						<polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>

@@ -88,9 +88,9 @@ final class Plugin
 	/**
 	 * The Slider.
 	 *
-	 * @param  array $atts .
+	 * @param array $atts .
 	 */
-	public function slimslider( $atts ) {
+	public function slimslider(array $atts ) {
 		$atts = shortcode_atts(
 			array(
 				'id'       => '904562',  // The slider ID.

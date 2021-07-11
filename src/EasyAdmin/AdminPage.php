@@ -5,7 +5,6 @@ namespace SlimSlider\EasyAdmin;
 abstract class AdminPage
 {
 	use ParamTrait, StylesTrait;
-
 	/**
 	 * The main __construct.
 	 *
@@ -28,7 +27,8 @@ abstract class AdminPage
 	 *
 	 * @return string the slug.
 	 */
-	public function get_parent_slug() {
+	public function get_parent_slug(): string
+    {
 		return $this->parent_slug;
 	}
 

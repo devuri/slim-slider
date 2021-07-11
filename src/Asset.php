@@ -9,13 +9,13 @@ namespace SlimSlider;
  */
 trait Asset
 {
-
 	/**
 	 * Asset uri.
 	 *
 	 * @return string
      */
-	public static function uri() {
+	public static function uri(): string
+    {
 		return SLIMSLIDER_URL . 'assets';
 	}
 

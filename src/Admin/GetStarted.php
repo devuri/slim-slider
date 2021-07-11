@@ -11,7 +11,8 @@ class GetStarted extends AdminPage {
 	 *
 	 * @return string the slug.
 	 */
-	public function get_parent_slug() {
+	public function get_parent_slug(): string
+    {
 		$this->parent_slug = 'edit.php?post_type=slimslide';
 		return $this->parent_slug;
 	}
