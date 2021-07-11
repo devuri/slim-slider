@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="7"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="src" />
+		<file name="wp-slim-slider.php" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+	<!-- suppress >-->
+	<issueHandlers>
+		<UndefinedFunction>
+		  <errorLevel type="suppress">
+			<directory name="src" />
+			<file name="wp-slim-slider.php" />
+		  </errorLevel>
+		</UndefinedFunction>
+		<UnresolvableInclude>
+			<errorLevel type="suppress">
+  			<directory name="src" />
+  			<file name="wp-slim-slider.php" />
+  		  </errorLevel>
+		</UnresolvableInclude>
+		<MissingReturnType>
+			<errorLevel type="suppress">
+  			<directory name="src" />
+  		  </errorLevel>
+		</MissingReturnType>
+	</issueHandlers>
+</psalm>
