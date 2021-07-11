@@ -19,6 +19,7 @@ return array(
     'SlimSlider\\Asset' => $baseDir . '/src/Asset.php',
     'SlimSlider\\EasyAdmin\\Admin' => $baseDir . '/src/EasyAdmin/Admin.php',
     'SlimSlider\\EasyAdmin\\AdminPage' => $baseDir . '/src/EasyAdmin/AdminPage.php',
+    'SlimSlider\\EasyAdmin\\AdminPageInterface' => $baseDir . '/src/EasyAdmin/AdminPageInterface.php',
     'SlimSlider\\EasyAdmin\\ParamTrait' => $baseDir . '/src/EasyAdmin/ParamTrait.php',
     'SlimSlider\\EasyAdmin\\StylesTrait' => $baseDir . '/src/EasyAdmin/StylesTrait.php',
     'SlimSlider\\MetaView\\Slide' => $baseDir . '/src/MetaView/Slide.php',

@@ -50,6 +50,7 @@ class ComposerStaticInit2cf1bd838b3c4ee620cc95822a13a3f8
         'SlimSlider\\Asset' => __DIR__ . '/../..' . '/src/Asset.php',
         'SlimSlider\\EasyAdmin\\Admin' => __DIR__ . '/../..' . '/src/EasyAdmin/Admin.php',
         'SlimSlider\\EasyAdmin\\AdminPage' => __DIR__ . '/../..' . '/src/EasyAdmin/AdminPage.php',
+        'SlimSlider\\EasyAdmin\\AdminPageInterface' => __DIR__ . '/../..' . '/src/EasyAdmin/AdminPageInterface.php',
         'SlimSlider\\EasyAdmin\\ParamTrait' => __DIR__ . '/../..' . '/src/EasyAdmin/ParamTrait.php',
         'SlimSlider\\EasyAdmin\\StylesTrait' => __DIR__ . '/../..' . '/src/EasyAdmin/StylesTrait.php',
         'SlimSlider\\MetaView\\Slide' => __DIR__ . '/../..' . '/src/MetaView/Slide.php',
