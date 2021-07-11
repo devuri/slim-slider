@@ -38,8 +38,7 @@ class Slides
 	 *
 	 * @return Slides
 	 */
-	public static function init(array $args ): Slides
-    {
+	public static function init(array $args ): Slides {
 		return new self( $args );
 	}
 
@@ -51,16 +50,6 @@ class Slides
 			return false;
 		}
 		return $this;
-	}
-
-	/**
-	 * Slider Options.
-	 *
-	 * @return array .
-	 */
-	protected function options(): array
-    {
-		return $this->args;
 	}
 
 	/**
@@ -104,7 +93,7 @@ class Slides
 	 * @return string
 	 */
 	protected function slider_main(): string
-    {
+	{
 		return sprintf(
 			'<div id="slimslider_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
 		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -126,8 +115,7 @@ class Slides
 	 *
 	 * @return array
 	 */
-	protected function get_slides(): array
-    {
+	protected function get_slides(): array {
 		if ( empty( $this->args['slides'] ) ) {
 			return array_keys( SlimSlide::slides() );
 		}
@@ -139,8 +127,7 @@ class Slides
 	 *
 	 * @return array
 	 */
-	protected function user_slides(): array
-    {
+	protected function user_slides(): array {
 		$slides = explode( ',', $this->args['slides'] );
 		foreach ( $slides as $slide ) {
 			if ( ! get_post( $slide ) ) return array();
@@ -154,7 +141,8 @@ class Slides
 	 * @return string
 	 */
 	protected function images(): string
-    {
+	{
+
 		$slider_image = '';
 		foreach ( $this->get_slides() as $slide ) {
 
@@ -176,8 +164,7 @@ class Slides
 	 *
 	 * @return string
 	 */
-	protected function image_slides(): string
-    {
+	protected function image_slides() {
 		return sprintf(
 			'<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;">
 				%3$s
@@ -193,8 +180,7 @@ class Slides
 	 *
 	 * @return int .
 	 */
-	protected function fillmode(): int
-    {
+	protected function fillmode(): int {
 		/**
 		 * 0: stretch
 		 * 1: contain
@@ -203,9 +189,9 @@ class Slides
 		 * 5: contain
 		 */
 		switch ( $this->args['fill'] ) {
-			// case 'stretch':
-			// 	$fillmode = 0;
-			// 	break;
+			case 'stretch':
+				$fillmode = 0;
+				break;
 			case 'contain':
 				$fillmode = 1;
 				break;
@@ -225,4 +211,12 @@ class Slides
 		return $fillmode;
 	}
 
+	/**
+	 * Slider Options.
+	 *
+	 * @return array .
+	 */
+	protected function options(): array {
+		return $this->args;
+	}
 }

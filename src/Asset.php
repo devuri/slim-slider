@@ -14,8 +14,7 @@ trait Asset
 	 *
 	 * @return string
      */
-	public static function uri(): string
-    {
+	public static function uri(): string {
 		return SLIMSLIDER_URL . 'assets';
 	}
 

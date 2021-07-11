@@ -18,8 +18,8 @@ final class SlimSlide
 	 *
 	 * @return array
      */
-	public static function slides( $array = true ): array
-    {
+	public static function slides( $array = true ): array {
+
 		$slides = new Data( 'slimslide' );
 
 		if ( ! $slides ) {

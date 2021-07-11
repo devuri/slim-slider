@@ -64,7 +64,10 @@ final class Plugin
 	 * @return void
 	 */
 	public function add_admin_page() {
-		new Admin( new GetStarted( 'Slim Slider: Getting Started' ) );
+		new Admin(
+			new GetStarted( 'Slim Slider: Getting Started' ),
+			'edit.php?post_type=slimslide'
+		);
 	}
 
 	/**
@@ -90,7 +93,7 @@ final class Plugin
 	 *
 	 * @param array $atts .
 	 */
-	public function slimslider(array $atts ) {
+	public function slimslider( array $atts ) {
 		$atts = shortcode_atts(
 			array(
 				'id'       => '904562',  // The slider ID.
