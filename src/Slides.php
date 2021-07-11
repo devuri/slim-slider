@@ -81,13 +81,14 @@ class Slides
 	}
 
 	/**
-     * Get The Slide.
-     *
-     * Get meta data for the current slide.
-     *
-     * @param int $id the slide ID.
-     * @return array
-     */
+	 * Get The Slide.
+	 *
+	 * Get meta data for the current slide.
+	 *
+	 * @param int $id the slide ID.
+	 *
+	 * @return array|false
+	 */
 	protected function slide_data(int $id ) {
 
 		if ( ! get_post( $id ) ) return false;
