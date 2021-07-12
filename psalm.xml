@@ -9,9 +9,9 @@
     <projectFiles>
         <directory name="src" />
 		<file name="wp-slim-slider.php" />
-        <ignoreFiles>
-            <directory name="vendor" />
-        </ignoreFiles>
+		<ignoreFiles>
+			<directory name="vendor" />
+		</ignoreFiles>
     </projectFiles>
 	<!-- suppress >-->
 	<issueHandlers>
@@ -29,8 +29,18 @@
 		</UnresolvableInclude>
 		<MissingReturnType>
 			<errorLevel type="suppress">
-  			<directory name="src" />
-  		  </errorLevel>
+  				<directory name="src" />
+  		  	</errorLevel>
 		</MissingReturnType>
+		<UndefinedConstant>
+			<errorLevel type="suppress">
+				<directory name="src" />
+			</errorLevel>
+		</UndefinedConstant>
+		<ParadoxicalCondition>
+			<errorLevel type="suppress">
+				<directory name="src" />
+			</errorLevel>
+		</ParadoxicalCondition>
 	</issueHandlers>
 </psalm>
