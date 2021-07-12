@@ -12,6 +12,8 @@ trait Asset
 	/**
 	 * Asset uri.
 	 *
+	 * @psalm-suppress
+	 *
 	 * @return string
      */
 	public static function uri(): string {
