@@ -12,6 +12,11 @@
 		"devuri/cpt-meta-box": "^0.1"
 	},
 	"require-dev": {
-		"vimeo/psalm": "^4.8"
-	}
+		"vimeo/psalm": "^4.8",
+		"friendsofphp/php-cs-fixer": "^3.0"
+	},
+	"scripts": {
+        "psalm": "vendor/bin/psalm",
+        "phpcs": "vendor/bin/php-cs-fixer fix src"
+    }
 }

@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '77d9193555a4612d0818be2b6c116796ae730393',
+    'reference' => '315a077d9c99877329478569b3a0dc5c90a4afe1',
     'name' => '__root__',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '77d9193555a4612d0818be2b6c116796ae730393',
+      'reference' => '315a077d9c99877329478569b3a0dc5c90a4afe1',
     ),
     'devuri/cpt-meta-box' => 
     array (

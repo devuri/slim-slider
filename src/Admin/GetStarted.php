@@ -4,13 +4,14 @@ namespace SlimSlider\Admin;
 
 use SlimSlider\EasyAdmin\AdminPage;
 
-class GetStarted extends AdminPage {
-
-	/**
-	 * Page Content.
-	 */
-	public function content() {
-		?>
+class GetStarted extends AdminPage
+{
+    /**
+     * Page Content.
+     */
+    public function content()
+    {
+        ?>
 		<h4 class="title">Slim Slider Shortcode Options and Usage</h4>
 			<hr>
 			The Slim Slider shortcode can be used as is like this: <code>[slim_slider]</code>.
@@ -65,8 +66,8 @@ class GetStarted extends AdminPage {
 
 			<hr>
 				Get started,
-					<a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=slimslide' ) ); ?>" >Create a Slide</a>.
+					<a href="<?php echo esc_url(admin_url('post-new.php?post_type=slimslide')); ?>" >Create a Slide</a>.
 			<hr>
 		<?php
-	}
+    }
 }
