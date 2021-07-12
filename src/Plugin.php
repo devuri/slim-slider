@@ -3,8 +3,8 @@
 namespace SlimSlider;
 
 use DevUri\Meta\MetaBox;
-use SlimSlider\EasyAdmin\Admin;
 use SlimSlider\Admin\GetStarted;
+use SlimSlider\EasyAdmin\Admin;
 use SlimSlider\MetaView\Slide;
 
 /**

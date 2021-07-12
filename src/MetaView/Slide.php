@@ -36,10 +36,10 @@ class Slide extends Settings
      */
     public function data($post_data): array
     {
-        $data['heading']     = sanitize_textarea_field($post_data['heading']);
-        $data['alt']         = sanitize_textarea_field($post_data['alt_text']);
+        $data['heading'] = sanitize_textarea_field($post_data['heading']);
+        $data['alt'] = sanitize_textarea_field($post_data['alt_text']);
         $data['description'] = sanitize_textarea_field($post_data['description_textarea']);
-        $data['url']         = esc_url_raw($post_data['url'], self::$allowed_protocols);
+        $data['url'] = esc_url_raw($post_data['url'], self::$allowed_protocols);
         return $data;
     }
 }

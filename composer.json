@@ -17,6 +17,7 @@
 	},
 	"scripts": {
         "psalm": "vendor/bin/psalm",
-        "phpcs": "vendor/bin/php-cs-fixer fix src"
+        "phpcs": "vendor/bin/php-cs-fixer fix src",
+        "nodev": "composer install --no-dev"
     }
 }

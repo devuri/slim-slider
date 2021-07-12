@@ -6,6 +6,7 @@ abstract class AdminPage implements AdminPageInterface
 {
     use ParamTrait;
     use StylesTrait;
+
     /**
      * The main __construct.
      *
