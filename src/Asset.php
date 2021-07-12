@@ -5,7 +5,7 @@ namespace SlimSlider;
 /**
  * The sim Asset class.
  *
- * @package sim
+ * @package SlimSlider
  */
 trait Asset
 {

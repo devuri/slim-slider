@@ -7,7 +7,6 @@ final class Admin
     /**
      * Page title.
      *
-     * @var object.
      */
     protected $page;
 

@@ -2,7 +2,7 @@
 /**
  * SlimSlider
  *
- * @package         Slim Slider.
+ * @package         SlimSlider.
  * @author          Uriel Wilson
  * @copyright       2021 Uriel Wilson
  * @license         GPL-2.0

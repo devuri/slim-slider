@@ -10,7 +10,7 @@ use SlimSlider\MetaView\Slide;
 /**
  * The sim Slider class.
  *
- * @package sim
+ * @package SlimSlider
  */
 final class Plugin
 {

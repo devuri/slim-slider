@@ -16,6 +16,7 @@
 		"friendsofphp/php-cs-fixer": "^3.0"
 	},
 	"scripts": {
+		"phpdoc": "php ./bin/phpdoc.phar",
         "psalm": "vendor/bin/psalm",
         "phpcs": "vendor/bin/php-cs-fixer fix src",
         "nodev": "composer install --no-dev"

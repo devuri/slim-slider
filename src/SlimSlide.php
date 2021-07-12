@@ -7,7 +7,7 @@ use DevUri\Meta\Data;
 /**
  * The Slider class.
  *
- * @package sim
+ * @package SlimSlider
  */
 final class SlimSlide
 {
