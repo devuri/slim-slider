@@ -2,22 +2,25 @@
 
 namespace SlimSlider\EasyAdmin;
 
-final class Admin {
-
+final class Admin
+{
 	/**
 	 * Page title.
 	 *
-	 * @var string .
+	 * @var object.
 	 */
-	protected $admin_page;
+	protected $page;
 
 	/**
 	 * The main __construct.
 	 *
-	 * @param string $title the page title.
+	 * @param AdminPageInterface $page the page object.
+	 * @param string|null        $parent the parent slug.
 	 */
-	public function __construct( AdminPage $page ) {
-		$this->admin_page = $page;
+	public function __construct( AdminPageInterface $page, $parent = null ) {
+		if ( ! is_admin() ) return false;
+		$this->page = $page;
+		$this->page->set_parent_slug( $parent );
 		add_action( 'admin_menu', [ $this, 'submenu_page' ], 99 );
 	}
 
@@ -26,11 +29,11 @@ final class Admin {
 	 */
 	public function submenu_page() {
 		add_submenu_page(
-			'edit.php?post_type=slimslide',
+			$this->page->get_parent_slug(),
 			'Slim Slider Setup',
 			'Get Started',
-			'manage_options',
-			$this->admin_page->page_slug,
+			$this->page->capability,
+			$this->page->page_slug,
 			[ $this, 'settings_page' ]
 		);
 	}
@@ -39,12 +42,11 @@ final class Admin {
 	 * Page.
 	 */
 	public function settings_page() {
-		//$this->admin_page->styles();
-		$this->admin_page->header();
+		$this->page->header();
 		do_action( 'esa_before_content' );
-		$this->admin_page->content();
+		$this->page->content();
 		do_action( 'esa_after_content' );
-		$this->admin_page->footer();
+		$this->page->footer();
 	}
 
 }

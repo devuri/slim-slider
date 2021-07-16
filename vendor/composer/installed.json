@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "devuri/cpt-meta-box",
-            "version": "0.1.7",
-            "version_normalized": "0.1.7.0",
+            "version": "0.1.8",
+            "version_normalized": "0.1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devuri/cpt-meta-box.git",
-                "reference": "722f19e779fabf9b32cc1390dcb8047ca736d1f0"
+                "reference": "bc6a7d8f95da341a509da12b0c6cb1543187707f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devuri/cpt-meta-box/zipball/722f19e779fabf9b32cc1390dcb8047ca736d1f0",
-                "reference": "722f19e779fabf9b32cc1390dcb8047ca736d1f0",
+                "url": "https://api.github.com/repos/devuri/cpt-meta-box/zipball/bc6a7d8f95da341a509da12b0c6cb1543187707f",
+                "reference": "bc6a7d8f95da341a509da12b0c6cb1543187707f",
                 "shasum": ""
             },
             "require": {
@@ -23,7 +23,7 @@
                 "phpunit/phpunit": "^8.0|^9.0",
                 "symfony/var-dumper": "^5.1.4"
             },
-            "time": "2021-04-23T01:09:27+00:00",
+            "time": "2021-04-23T01:31:24+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -112,6 +112,6 @@
             "install-path": "../devuri/wp-admin-page"
         }
     ],
-    "dev": true,
+    "dev": false,
     "dev-package-names": []
 }

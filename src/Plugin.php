@@ -6,14 +6,13 @@ use DevUri\Meta\MetaBox;
 use SlimSlider\EasyAdmin\Admin;
 use SlimSlider\Admin\GetStarted;
 use SlimSlider\MetaView\Slide;
-use DevUri\Meta\Data;
 
 /**
  * The sim Slider class.
  *
  * @package sim
  */
-final class Slider
+final class Plugin
 {
 
 	/**
@@ -65,7 +64,10 @@ final class Slider
 	 * @return void
 	 */
 	public function add_admin_page() {
-		new Admin( new GetStarted( 'Slim Slider: Getting Started' ) );
+		new Admin(
+			new GetStarted( 'Slim Slider: Getting Started' ),
+			'edit.php?post_type=slimslide'
+		);
 	}
 
 	/**
@@ -86,27 +88,10 @@ final class Slider
 		new MetaBox( new Slide( 'slimslide' ) );
 	}
 
-    /**
-     * Get The Slide.
-     *
-     * Get meta data for the current slide.
-     *
-     * @param  int $id the slide ID.
-     * @return array
-     */
-	public function get_slide( $id ) {
-
-		if ( ! get_post( $id ) ) return false;
-
-		$slide = new Data( 'slimslide' );
-
-		return $slide->meta( $id, 'slide_meta' );
-	}
-
 	/**
 	 * The Slider.
 	 *
-	 * @param  array $atts .
+	 * @param string|array $atts .
 	 */
 	public function slimslider( $atts ) {
 		$atts = shortcode_atts(

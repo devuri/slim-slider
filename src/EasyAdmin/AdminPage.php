@@ -2,28 +2,14 @@
 
 namespace SlimSlider\EasyAdmin;
 
-abstract class AdminPage
+abstract class AdminPage implements AdminPageInterface
 {
-	use StylesTrait;
-
-	/**
-	 * Page title.
-	 *
-	 * @var string .
-	 */
-	public $page_title;
-
-	/**
-	 * Page slug.
-	 *
-	 * @var string .
-	 */
-	public $page_slug;
-
+	use ParamTrait, StylesTrait;
 	/**
 	 * The main __construct.
 	 *
 	 * @param string $title the page title.
+	 * @param bool   $page_styles the page css styles.
 	 */
 	public function __construct( $title, $page_styles = true ) {
 		$this->page_title = $title;
@@ -37,9 +23,29 @@ abstract class AdminPage
 	}
 
 	/**
+	 * Set the parent slug.
+	 *
+	 * @param string $parent_slug the parent slug.
+	 *
+	 * @return void .
+	 */
+	public function set_parent_slug( $parent_slug ): void {
+		$this->parent_slug = $parent_slug;
+	}
+
+	/**
+	 * Get the parent slug.
+	 *
+	 * @return string|null the slug.
+	 */
+	public function get_parent_slug(): ?string {
+		return $this->parent_slug;
+	}
+
+	/**
 	 * Page Content.
 	 */
-	abstract function content();
+	abstract public function content();
 
 	/**
 	 * Page header.
@@ -47,13 +53,14 @@ abstract class AdminPage
 	public function header() {
 		do_action( 'esa_head' );
 		?>
-		<div id="slsl-important-notice" style="background-color:#569769;">
+		<!-- <div id="slsl-important-notice" style="background-color:#569769;"> -->
+		<div id="slsl-important-notice" style="background-color:<?php echo esc_attr( $this->mcolor ); ?>;">
 			<span class="slsl-notice-message">
 				<?php do_action( 'esa_header_message' ); ?>
 			</span>
 		</div>
 		<header class="slsl-header">
-			<h2><?php echo sanitize_text_field( $this->page_title ) ?></h2>
+			<h2><?php echo wp_kses_post( $this->page_title ); ?></h2>
 			<?php do_action( 'esa_html_header' ); ?>
 		</header>
 		<div class="wrap">

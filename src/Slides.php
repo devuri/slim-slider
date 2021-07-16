@@ -2,6 +2,8 @@
 
 namespace SlimSlider;
 
+use DevUri\Meta\Data;
+
 class Slides
 {
 	use Asset;
@@ -23,7 +25,7 @@ class Slides
 	 *
 	 * @param array $args uses shortcode $atts.
 	 */
-	public function __construct( $args ) {
+	public function __construct(array $args ) {
 		$this->args = $args;
 		$this->args['fill']  = $this->fillmode();
 		$this->args['width'] = '1920';
@@ -36,7 +38,7 @@ class Slides
 	 *
 	 * @return Slides
 	 */
-	public static function init( $args ) {
+	public static function init(array $args ): Slides {
 		return new self( $args );
 	}
 
@@ -68,13 +70,21 @@ class Slides
 	}
 
 	/**
-	 * Get Slide meta info.
+	 * Get The Slide.
 	 *
-	 * @param int $id slide item ID.
-	 * @return array
+	 * Get meta data for the current slide.
+	 *
+	 * @param int $id the slide ID.
+	 *
+	 * @return array|false
 	 */
-	protected function slide_data( $id ) {
-		return ( new Slider() )->get_slide( $id );
+	protected function slide_data(int $id ) {
+
+		if ( ! get_post( $id ) ) return false;
+
+		$slide = new Data( 'slimslide' );
+
+		return $slide->meta( $id, 'slide_meta' );
 	}
 
 	/**
@@ -82,7 +92,8 @@ class Slides
 	 *
 	 * @return string
 	 */
-	protected function slider_main() {
+	protected function slider_main(): string
+	{
 		return sprintf(
 			'<div id="slimslider_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
 		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -104,7 +115,7 @@ class Slides
 	 *
 	 * @return array
 	 */
-	protected function get_slides() {
+	protected function get_slides(): array {
 		if ( empty( $this->args['slides'] ) ) {
 			return array_keys( SlimSlide::slides() );
 		}
@@ -116,7 +127,7 @@ class Slides
 	 *
 	 * @return array
 	 */
-	protected function user_slides() {
+	protected function user_slides(): array {
 		$slides = explode( ',', $this->args['slides'] );
 		foreach ( $slides as $slide ) {
 			if ( ! get_post( $slide ) ) return array();
@@ -129,14 +140,15 @@ class Slides
 	 *
 	 * @return string
 	 */
-	protected function images() {
+	protected function images(): string
+	{
 
 		$slider_image = '';
 		foreach ( $this->get_slides() as $slide ) {
 
 			$slide = intval( $slide );
 			$meta = $this->slide_data( $slide );
-			$alt = isset( $meta['alt'] ) ? $meta['alt'] : get_the_title( $meta['ID'] );
+			$alt = $meta['alt'] ?? get_the_title($meta['ID']);
 
 		    if ( is_null( $meta['url'] ) || empty( $meta['url'] ) ) {
 		        $slider_image .= '<div><img data-u="image" alt="' . $alt . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></div>';
@@ -168,7 +180,7 @@ class Slides
 	 *
 	 * @return int .
 	 */
-	protected function fillmode() {
+	protected function fillmode(): int {
 		/**
 		 * 0: stretch
 		 * 1: contain
@@ -204,7 +216,7 @@ class Slides
 	 *
 	 * @return array .
 	 */
-	protected function options() {
+	protected function options(): array {
 		return $this->args;
 	}
 }

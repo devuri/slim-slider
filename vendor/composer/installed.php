@@ -1,33 +1,33 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '0.9.1.x-dev',
-    'version' => '0.9.1.9999999-dev',
+    'pretty_version' => '0.12.3.x-dev',
+    'version' => '0.12.3.9999999-dev',
     'aliases' => 
     array (
     ),
-    'reference' => '95e00e40467850c8d57e49e25a1d398c8ab06e99',
+    'reference' => '77d9193555a4612d0818be2b6c116796ae730393',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '0.9.1.x-dev',
-      'version' => '0.9.1.9999999-dev',
+      'pretty_version' => '0.12.3.x-dev',
+      'version' => '0.12.3.9999999-dev',
       'aliases' => 
       array (
       ),
-      'reference' => '95e00e40467850c8d57e49e25a1d398c8ab06e99',
+      'reference' => '77d9193555a4612d0818be2b6c116796ae730393',
     ),
     'devuri/cpt-meta-box' => 
     array (
-      'pretty_version' => '0.1.7',
-      'version' => '0.1.7.0',
+      'pretty_version' => '0.1.8',
+      'version' => '0.1.8.0',
       'aliases' => 
       array (
       ),
-      'reference' => '722f19e779fabf9b32cc1390dcb8047ca736d1f0',
+      'reference' => 'bc6a7d8f95da341a509da12b0c6cb1543187707f',
     ),
     'devuri/wp-admin-page' => 
     array (

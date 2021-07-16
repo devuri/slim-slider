@@ -6,7 +6,6 @@ use DevUri\Meta\Settings;
 
 class Slide extends Settings
 {
-
 	/**
 	 * List of protocols to allow in url.
 	 *

@@ -11,7 +11,6 @@ use DevUri\Meta\Data;
  */
 final class SlimSlide
 {
-
 	/**
 	 * Get All Slides.
 	 *
@@ -19,7 +18,7 @@ final class SlimSlide
 	 *
 	 * @return array
      */
-	public static function slides( $array = true ) {
+	public static function slides( $array = true ): array {
 
 		$slides = new Data( 'slimslide' );
 
