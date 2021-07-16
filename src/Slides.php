@@ -155,6 +155,7 @@ class Slides
         $slider_image = '';
         foreach ($this->get_slides() as $slide) {
             $slide = intval($slide);
+			if ('publish' !== get_post_status($slide)) continue;
             $meta = $this->slide_data($slide);
             $alt = $meta['alt'] ?? get_the_title($meta['ID']);
 
