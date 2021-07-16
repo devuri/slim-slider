@@ -2,12 +2,14 @@
 
 namespace SlimSlider\EasyAdmin;
 
-trait StylesTrait {
-	/**
-	 * Styles.
-	 */
-	public function page_styles() {
-		?>
+trait StylesTrait
+{
+    /**
+     * Styles.
+     */
+    public function page_styles()
+    {
+        ?>
 		<style media="screen">
 		#slsl-important-notice {
 			padding: 4px;
@@ -79,5 +81,5 @@ trait StylesTrait {
 		}
 		</style>
 		<?php
-	}
+    }
 }

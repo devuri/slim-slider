@@ -27,24 +27,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '0.12.3.x-dev',
-    'version' => '0.12.3.9999999-dev',
+    'pretty_version' => '0.13.01.x-dev',
+    'version' => '0.13.01.9999999-dev',
     'aliases' => 
     array (
     ),
-    'reference' => '77d9193555a4612d0818be2b6c116796ae730393',
+    'reference' => '4e6f3f23f93ca205e2f4f4df79aaa4ce99b982b5',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '0.12.3.x-dev',
-      'version' => '0.12.3.9999999-dev',
+      'pretty_version' => '0.13.01.x-dev',
+      'version' => '0.13.01.9999999-dev',
       'aliases' => 
       array (
       ),
-      'reference' => '77d9193555a4612d0818be2b6c116796ae730393',
+      'reference' => '4e6f3f23f93ca205e2f4f4df79aaa4ce99b982b5',
     ),
     'devuri/cpt-meta-box' => 
     array (
