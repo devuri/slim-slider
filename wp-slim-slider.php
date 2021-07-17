@@ -42,3 +42,15 @@ define( 'SLIMSLIDER_URL', plugins_url( '/', __FILE__ ) );
 
 // ready.
 SlimSlider\Plugin::is_ready();
+
+// php 8 check.
+function slimslide_php8_version_check() {
+	if ( version_compare(PHP_VERSION, '8.0.0') >= 0 ) {
+		return '<div style="display: block; text-align: center; padding:12px;">
+		Looks like you are using PHP 8, slim slider currently supports PHP 7+.<br>
+		<small>Only Admins can see this message.</small>
+		</div>';
+	} else {
+		return false;
+	}
+}

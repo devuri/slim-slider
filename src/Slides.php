@@ -100,6 +100,12 @@ class Slides
      */
     protected function slider_main(): string
     {
+		if ( slimslide_php8_version_check() ) {
+			if ( current_user_can('manage_options')) {
+				return slimslide_php8_version_check();
+			}
+			return false;
+		}
         return sprintf(
             '<div id="slimslider_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
 		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
