@@ -86,10 +86,10 @@ final class Plugin
 
         // dont render the shortcode in admin.
         if (! is_admin()) {
-            add_shortcode('slim_slider', [ $this, 'slimslider' ]);
+            add_shortcode('slim_slider', array($this, 'slimslider'));
         }
         // post type.
-        add_action('init', [ SlimSlide::class, 'slider_post_type' ]);
+        add_action('init', array(SlimSlide::class, 'slider_post_type'));
 
         // meta data.
         new MetaBox(new Slide('slimslide'));

@@ -18,7 +18,10 @@
 	"scripts": {
 		"phpdoc": "php ./bin/phpdoc.phar",
         "psalm": "vendor/bin/psalm",
-        "phpcs": "vendor/bin/php-cs-fixer fix src",
-        "nodev": "composer install --no-dev"
+		"php-cs-fixer": [
+		    "composer install",
+		    "vendor/bin/php-cs-fixer fix src"
+		],
+        "no-dev": "composer install --no-dev"
     }
 }

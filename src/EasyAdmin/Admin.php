@@ -23,7 +23,7 @@ final class Admin
         }
         $this->page = $page;
         $this->page->set_parent_slug($parent);
-        add_action('admin_menu', [ $this, 'submenu_page' ], 99);
+        add_action('admin_menu', array($this, 'submenu_page'), 99);
     }
 
     /**
@@ -37,7 +37,7 @@ final class Admin
             'Get Started',
             $this->page->capability,
             $this->page->page_slug,
-            [ $this, 'settings_page' ]
+            array($this, 'settings_page')
         );
     }
 

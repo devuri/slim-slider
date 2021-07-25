@@ -70,7 +70,7 @@ class Slides
         // pass on options to slimslider.js.
         wp_localize_script('slim-slider', 'SlimSliderData', $this->options());
 
-        echo $this->slider_main(); // @codingStandardsIgnoreLine.
+        echo $this->slider_main();
     }
 
     /**
