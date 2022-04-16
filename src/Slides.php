@@ -135,7 +135,7 @@ class Slides
         return $this->user_slides();
     }
 
-    /**
+	/**
      * Get user defined slides.
      *
      * @return array
@@ -144,9 +144,9 @@ class Slides
     {
         $slides = explode(',', $this->args['slides']);
         foreach ($slides as $slide) {
-            if (! get_post($slide)) {
-                return array();
-            }
+			if (! get_post($slide)) {
+				continue;
+			}
         }
         return $slides;
     }
