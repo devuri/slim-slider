@@ -37,7 +37,7 @@ final class SlimSlide
      */
     public static function slider_post_type()
     {
-        $labels = [
+        $labels = array(
             'name'                  => __('Slim Slides', 'slim-slider'),
             'singular_name'         => __('Slim Slide', 'slim-slider'),
             'menu_name'             => __('Slim Slides', 'slim-slider'),
@@ -65,9 +65,9 @@ final class SlimSlide
             'items_list'            => __('Slides list', 'slim-slider'),
             'items_list_navigation' => __('Slides list navigation', 'slim-slider'),
             'filter_items_list'     => __('Filter slides list', 'slim-slider'),
-        ];
+        );
 
-        $args = [
+        $args = array(
             'label'                 => __('Slim Slides', 'slim-slider'),
             'labels'                => $labels,
             'description'           => '',
@@ -85,11 +85,11 @@ final class SlimSlide
             'capability_type'       => 'post',
             'map_meta_cap'          => true,
             'hierarchical'          => false,
-            'rewrite'               => [ 'slug' => 'slimslide', 'with_front' => true ], // @codingStandardsIgnoreLine
+            'rewrite'               => array( 'slug' => 'slimslide', 'with_front' => true ),
             'query_var'             => true,
             'menu_icon'             => 'dashicons-images-alt2',
-            'supports'              => [ 'title', 'thumbnail' ],
-        ];
+            'supports'              => array( 'title', 'thumbnail' ),
+        );
         register_post_type('slimslide', $args);
     }
 }

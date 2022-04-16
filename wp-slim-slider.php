@@ -12,7 +12,7 @@
  * Plugin Name:       Slim Slider
  * Plugin URI:        https://switchwebdev.com/wordpress-plugins/
  * Description:       Slim Slider is a simple slider plugin that allows you to add a slider in posts and pages.
- * Version:           0.14.06
+ * Version:           0.15.03
  * Requires at least: 3.4
  * Requires PHP:      7.1
  * Author:            Uriel Wilson
@@ -42,3 +42,15 @@ define( 'SLIMSLIDER_URL', plugins_url( '/', __FILE__ ) );
 
 // ready.
 SlimSlider\Plugin::is_ready();
+
+// php 8 check.
+function slimslide_php8_version_check() {
+	if ( version_compare(PHP_VERSION, '8.0.0') >= 0 ) {
+		return '<div style="display: block; text-align: center; padding:12px;">
+		Looks like you are using PHP 8, slim slider currently supports PHP 7+.<br>
+		<small>Only Admins can see this message.</small>
+		</div>';
+	} else {
+		return false;
+	}
+}

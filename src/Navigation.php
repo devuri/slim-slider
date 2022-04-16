@@ -13,7 +13,7 @@ class Navigation
      * @param array $args .
      * @return string
      */
-    public static function get($args): string
+    public static function get($args): ?string
     {
 
         // Bullet Navigator.
@@ -30,6 +30,8 @@ class Navigation
         if ('ab' === $args['nav']) {
             return self::nav();
         }
+
+        return null;
     }
 
     /**

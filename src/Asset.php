@@ -18,6 +18,6 @@ trait Asset
      */
     public static function uri(): string
     {
-        return SLIMSLIDER_URL . 'assets';
+        return SLIMSLIDER_URL . 'assets'; // @phpstan-ignore-line.
     }
 }

@@ -16,11 +16,11 @@ abstract class AdminPage implements AdminPageInterface
     public function __construct($title, $page_styles = true)
     {
         $this->page_title = $title;
-        $this->page_slug = sanitize_title($title);
+        $this->page_slug  = sanitize_title($title);
 
         // load css styles.
         if ($page_styles) {
-            add_action('esa_head', [ $this, 'page_styles' ]);
+            add_action('esa_head', array( $this, 'page_styles' ));
         }
     }
 
