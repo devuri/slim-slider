@@ -18,7 +18,7 @@ class Slides
      *
      * @var array
      */
-    protected $args = [];
+    protected $args = array();
 
     /**
      * Start here.
@@ -27,7 +27,7 @@ class Slides
      */
     public function __construct(array $args)
     {
-        $this->args = $args;
+        $this->args          = $args;
         $this->args['fill']  = $this->fillmode();
         $this->args['width'] = '1920';
     }
@@ -100,12 +100,12 @@ class Slides
      */
     protected function slider_main(): string
     {
-		if ( slimslide_php8_version_check() ) {
-			if ( current_user_can('manage_options')) {
-				return slimslide_php8_version_check();
-			}
-			return false;
-		}
+        if (slimslide_php8_version_check()) {
+            if (current_user_can('manage_options')) {
+                return slimslide_php8_version_check();
+            }
+            return false;
+        }
         return sprintf(
             '<div id="slimslider_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
 		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -135,7 +135,7 @@ class Slides
         return $this->user_slides();
     }
 
-	/**
+    /**
      * Get user defined slides.
      *
      * @return array
@@ -144,9 +144,9 @@ class Slides
     {
         $slides = explode(',', $this->args['slides']);
         foreach ($slides as $slide) {
-			if (! get_post($slide)) {
-				continue;
-			}
+            if (! get_post($slide)) {
+                continue;
+            }
         }
         return $slides;
     }
@@ -161,9 +161,11 @@ class Slides
         $slider_image = '';
         foreach ($this->get_slides() as $slide) {
             $slide = intval($slide);
-			if ('publish' !== get_post_status($slide)) continue;
+            if ('publish' !== get_post_status($slide)) {
+                continue;
+            }
             $meta = $this->slide_data($slide);
-            $alt = $meta['alt'] ?? get_the_title($meta['ID']);
+            $alt  = $meta['alt'] ?? get_the_title($meta['ID']);
 
             if (is_null($meta['url']) || empty($meta['url'])) {
                 $slider_image .= '<div><img data-u="image" alt="' . $alt . '" src="' . wp_get_attachment_url($meta['thumbnail']) . '" /></div>';

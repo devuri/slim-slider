@@ -144,6 +144,7 @@ class MetaBox
 				 * Get meta data.
 				 */
 				$get_meta = get_post_meta( $post->ID, $this->meta . '_meta', true );
+
 				if ( empty($get_meta) ) {
 					$get_meta = [];
 				}
