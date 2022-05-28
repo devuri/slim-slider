@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '255058a79d94ac30c6a78e158b0692de443eb162',
+        'reference' => '31f0ae3aa3fb374a194c7c14009b6e0bef88afef',
         'name' => '__root__',
         'dev' => false,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '255058a79d94ac30c6a78e158b0692de443eb162',
+            'reference' => '31f0ae3aa3fb374a194c7c14009b6e0bef88afef',
             'dev_requirement' => false,
         ),
         'devuri/cpt-meta-box' => array(
