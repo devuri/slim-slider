@@ -14,7 +14,7 @@ trait ParamTrait
      *
      * @var string
      */
-    protected $parent_slug = null;
+    public $parent_slug = null;
 
     /**
      * $page_title
@@ -24,7 +24,7 @@ trait ParamTrait
      *
      * @var string
      */
-    protected $page_title = 'Page Title';
+    public $page_title = 'Page Title';
 
     /**
      * $menu_title
@@ -34,7 +34,7 @@ trait ParamTrait
      * @var string
      * @link https://developer.wordpress.org/reference/functions/add_menu_page/
      */
-    protected $menu_title = 'Title';
+    public $menu_title = 'Title';
 
     /**
      * $capability
@@ -44,7 +44,7 @@ trait ParamTrait
      * @var string
      * @link https://developer.wordpress.org/reference/functions/add_menu_page/
      */
-    protected $capability = 'manage_options';
+    public $capability = 'manage_options';
 
     /**
      * $menu_slug
@@ -56,7 +56,7 @@ trait ParamTrait
      * @var string
      * @link https://developer.wordpress.org/reference/functions/add_menu_page/
      */
-    protected $page_slug = null;
+    public $page_slug = null;
 
     /**
      * $icon_url
@@ -72,7 +72,7 @@ trait ParamTrait
      * @var string
      * @link https://developer.wordpress.org/reference/functions/add_menu_page/
      */
-    protected $icon_url = null;
+    public $icon_url = null;
 
     /**
      * $position
@@ -83,7 +83,7 @@ trait ParamTrait
      * @var int
      * @link https://developer.wordpress.org/reference/functions/add_menu_page/
      */
-    protected $position = null;
+    public $position = null;
 
     /**
      * $prefix
@@ -92,12 +92,12 @@ trait ParamTrait
      *
      * @var string
      */
-    protected $prefix = null;
+    public $prefix = null;
 
     /**
      * Menu color
      *
      * @var string
      */
-    protected $mcolor = '#0071A1';
+    public $mcolor = '#0071A1';
 }
