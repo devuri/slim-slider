@@ -3,8 +3,8 @@ Contributors: icelayer
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6D6W2KXB88NKE
 Tags: slideshow, slider, image slider,responsive slider, jssor, slim slider
 Requires at least: 3.4
-Tested up to: 5.7
-Stable tag: 0.15.03
+Tested up to: 6.0
+Stable tag: 0.16.01
 Requires PHP: 7.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
