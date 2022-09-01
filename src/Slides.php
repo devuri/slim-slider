@@ -167,15 +167,15 @@ class Slides
             $meta = $this->slide_data($slide);
             $alt  = $meta['alt'] ?? get_the_title($meta['ID']);
 
-			// Add js onClick event handler.
-			// this will require # in place where link would be.
-			$js_event_safe = $meta['onclick'] ?? null;
+            // Add js onClick event handler.
+            // this will require # in place where link would be.
+            $js_event_safe = $meta['onclick'] ?? null;
 
-			$click_event = null;
+            $click_event = null;
 
-			if ( $js_event_safe ) {
-				$click_event = 'onclick="'.esc_html($js_event_safe).'" ';
-			}
+            if ($js_event_safe) {
+                $click_event = 'onclick="'.esc_html($js_event_safe).'" ';
+            }
 
             if (is_null($meta['url']) || empty($meta['url'])) {
                 $slider_image .= '<div><img data-u="image" alt="' . $alt . '" src="' . wp_get_attachment_url($meta['thumbnail']) . '" /></div>';

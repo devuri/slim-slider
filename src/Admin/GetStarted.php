@@ -64,6 +64,11 @@ class GetStarted extends AdminPage
 				<li><span>contain</span>	Large image and actual size for small image.</li>
 			</ul>
 
+			<strong>Advanced: Add Element click event</strong><br>
+			We can add click event by specified function in OnClick field.
+			like: <code>my_js_click_event()</code>
+			This will add <code>my_js_click_event()</code> onclick to the html output of that elment.
+			<br>
 			<hr>
 				Get started,
 					<a href="<?php echo esc_url(admin_url('post-new.php?post_type=slimslide')); ?>" >Create a Slide</a>.
