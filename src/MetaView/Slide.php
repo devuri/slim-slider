@@ -26,12 +26,13 @@ class Slide extends Settings
         echo self::form()->input('Alt Text', self::meta('alt', $get_meta));
         echo self::form()->textarea('Description', self::meta('description', $get_meta));
         echo self::form()->input('URL', self::meta('url', $get_meta));
+        echo self::form()->input('OnClick', self::meta('onclick', $get_meta));
     }
 
     /**
      * Lets build out the data settings
      *
-     * @param array $post_data .
+     * @param array $post_data $_POST variable items should be cleaned.
      * @return array
      */
     public function data($post_data): array
@@ -41,6 +42,7 @@ class Slide extends Settings
             'alt'         => sanitize_textarea_field($post_data['alt_text']),
             'description' => sanitize_textarea_field($post_data['description_textarea']),
             'url'         => esc_url_raw($post_data['url'], self::$allowed_protocols),
+            'onclick'     => sanitize_textarea_field($post_data['onclick']),
         );
     }
 }

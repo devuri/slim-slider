@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '0.15.03.x-dev',
-        'version' => '0.15.03.9999999-dev',
+        'pretty_version' => '0.16.01.x-dev',
+        'version' => '0.16.01.9999999-dev',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '31f0ae3aa3fb374a194c7c14009b6e0bef88afef',
+        'reference' => 'cd9c6df48e75e042006fde63de7d6e9f8418c564',
         'name' => '__root__',
         'dev' => false,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '0.15.03.x-dev',
-            'version' => '0.15.03.9999999-dev',
+            'pretty_version' => '0.16.01.x-dev',
+            'version' => '0.16.01.9999999-dev',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '31f0ae3aa3fb374a194c7c14009b6e0bef88afef',
+            'reference' => 'cd9c6df48e75e042006fde63de7d6e9f8418c564',
             'dev_requirement' => false,
         ),
         'devuri/cpt-meta-box' => array(
