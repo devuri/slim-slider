@@ -67,6 +67,7 @@ class GetStarted extends AdminPage
 			<strong>Advanced: Add Element click event</strong><br>
 			We can add click event by specified function in OnClick field.
 			like: <code>my_js_click_event()</code>
+			<br>
 			This will add <code>my_js_click_event()</code> onclick to the html output of that elment.
 			<br>
 			<hr>
