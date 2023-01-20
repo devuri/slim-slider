@@ -129,10 +129,51 @@ class Slides
      */
     protected function get_slides(): array
     {
+        if (self::_slider_id($this->args['id'])) {
+            return $this->get_sliderby_id();
+        }
+
         if (empty($this->args['slides'])) {
             return array_keys(SlimSlide::slides());
         }
         return $this->user_slides();
+    }
+
+    /**
+     * Get slides by Slider ID.
+     *
+     * @return array
+     */
+    protected function get_sliderby_id(): array
+    {
+        $slider_id = (int) $this->args['id'];
+
+        $slim_slides = get_post_meta($slider_id, 'sliders_meta', true);
+
+        if (! $slim_slides) {
+            return array();
+        }
+
+        $slides = explode(',', $slim_slides['slides']);
+
+        return \is_array($slides) ? $slides : array();
+    }
+
+    /**
+     * Check slider ID is active.
+     *
+     * @param  string $slider_id
+     * @return null|int
+     */
+    private static function _slider_id($slider_id): ?int
+    {
+        $slider_id = (int) $slider_id;
+
+        if (boolval($slider_id)) {
+            return $slider_id;
+        }
+
+        return null;
     }
 
     /**
@@ -164,6 +205,7 @@ class Slides
             if ('publish' !== get_post_status($slide)) {
                 continue;
             }
+
             $meta = $this->slide_data($slide);
             $alt  = $meta['alt'] ?? get_the_title($meta['ID']);
 

@@ -6,6 +6,7 @@ use DevUri\Meta\MetaBox;
 use SlimSlider\Admin\GetStarted;
 use SlimSlider\EasyAdmin\Admin;
 use SlimSlider\MetaView\Slide;
+use SlimSlider\MetaView\Sliders;
 
 /**
  * The sim Slider class.
@@ -91,8 +92,12 @@ final class Plugin
         // post type.
         add_action('init', array(SlimSlide::class, 'slider_post_type'));
 
+        add_action('init', array(Slider::class, 'slslider_post_type'));
+
         // meta data.
         new MetaBox(new Slide('slimslide'));
+
+        new MetaBox(new Sliders('slslider'));
     }
 
     /**
@@ -104,7 +109,7 @@ final class Plugin
     {
         $atts = shortcode_atts(
             array(
-                'id'       => '904562',  // The slider ID.
+                'id'       => '0',       // The slider ID.
                 'height'   => '740',     // Height of every slide in pixels.
                 'nav'      => 'ab',      // Navigation type, b: bullet navigator or a: arrow navigator.
                 'swipe'    => '800',     // Swipe animation duration (in milliseconds).
