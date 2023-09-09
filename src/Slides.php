@@ -106,18 +106,34 @@ class Slides
             }
             return false;
         }
-        return sprintf(
-            '<div id="slimslider_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
-		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-		            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="%3$s/svg/loading/static-svg/spin.svg" />
-		    </div> %4$s %5$s</div>',
-            $this->args['width'],
-            $this->args['height'],
-            Asset::uri(),
-            $this->image_slides(),
-            Navigation::get($this->args),
-            $this->args['id']
-        );
+        // return sprintf(
+        //     '<div id="slimslider_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
+		//         <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+		//             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="%3$s/svg/loading/static-svg/spin.svg" />
+		//     </div> %4$s %5$s</div>',
+        //     $this->args['width'],
+        //     $this->args['height'],
+        //     Asset::uri(),
+        //     $this->image_slides(),
+        //     Navigation::get($this->args),
+        //     $this->args['id']
+        // );
+
+		// PHP8.0 fix The percentage sign (%) inside the style attributes needs to be escaped
+		// as %% to avoid conflicts with sprintf, which uses % for placeholders.
+		return sprintf(
+		    '<div id="slimslider_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
+		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%%;height:100%%;text-align:center;background-color:rgba(0,0,0,0.7);">
+		            <img style="margin-top:-19px;position:relative;top:50%%;width:38px;height:38px;" src="%3$s/svg/loading/static-svg/spin.svg" />
+		        </div> %4$s %5$s</div>',
+		    $this->args['width'],
+		    $this->args['height'],
+		    Asset::uri(),
+		    $this->image_slides(),
+		    Navigation::get($this->args),
+		    $this->args['id']
+		);
+
     }
 
     /**
@@ -130,6 +146,7 @@ class Slides
     protected function get_slides(): array
     {
         if (self::_slider_id($this->args['id'])) {
+			$this->args = $this->get_slider_attr();
             return $this->get_sliderby_id();
         }
 
@@ -158,6 +175,28 @@ class Slides
 
         return \is_array($slides) ? $slides : array();
     }
+
+	protected function get_slider_attr(): array
+	{
+		if (! self::_slider_id($this->args['id'])) {
+			return $this->args;
+		}
+
+		$meta = get_post_meta($slider_id, 'sliders_meta', true);
+
+		$attributes = [
+			'height'   => $meta['height'],
+			'width'    => $meta['width'],
+			'nav'      => $meta['nav'],
+			'swipe'    => $meta['swipe_animation_duration'],
+			'fill'     => $meta['image_fill_mode'],
+			'duration' => $meta['transition_speed'],
+			'opacity'  => $meta['transition_opacity'],
+			'speed'    => $meta['speed'],
+		];
+
+		return wp_parse_args($attributes, $this->args);
+	}
 
     /**
      * Check slider ID is active.
