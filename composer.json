@@ -1,12 +1,12 @@
 {
 	"autoload": {
-		  "psr-4": {
-			"SlimSlider\\":"src"
+		"psr-4": {
+			"SlimSlider\\": "src"
 		}
 	},
 	"config": {
-	    "optimize-autoloader": true
-    },
+		"optimize-autoloader": true
+	},
 	"require": {
 		"devuri/wp-admin-page": "^3.1",
 		"devuri/cpt-meta-box": "^0.1"
@@ -28,8 +28,8 @@
 			"composer no-dev"
 		],
 		"phpstan": [
-		    "composer install -q",
-		    "@php ./vendor/bin/phpstan analyse"
+			"composer install -q",
+			"@php ./vendor/bin/phpstan analyse"
 		],
 		"phplint": [
 			"composer install -q",
@@ -40,11 +40,11 @@
 			"vendor/bin/psalm --taint-analysis"
 		],
 		"phpdoc": "php ./bin/phpdoc.phar",
-        "psalm": "vendor/bin/psalm",
+		"psalm": "vendor/bin/psalm",
 		"php-cs-fixer": [
-		    "composer install",
-		    "vendor/bin/php-cs-fixer fix src"
+			"composer install",
+			"vendor/bin/php-cs-fixer fix src"
 		],
-        "no-dev": "composer install --no-dev -q"
-    }
+		"no-dev": "composer install --no-dev -q"
+	}
 }
