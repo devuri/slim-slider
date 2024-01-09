@@ -1,22 +1,15 @@
 <?php
 /**
- * SlimSlider
- *
- * @package         SlimSlider.
- * @author          Uriel Wilson
- * @copyright       2021 Uriel Wilson
- * @license         GPL-2.0
- * @link            https://urielwilson.com
  *
  * @wordpress-plugin
  * Plugin Name:       Slim Slider
- * Plugin URI:        https://switchwebdev.com/wordpress-plugins/
+ * Plugin URI:        https://wpbrisko.com/wordpress-plugins/
  * Description:       Slim Slider is a simple slider plugin that allows you to add a slider in posts and pages.
  * Version:           1.2.0
  * Requires at least: 3.4
  * Requires PHP:      7.1
- * Author:            Uriel Wilson
- * Author URI:        https://urielwilson.com
+ * Author:            uriel
+ * Author URI:        https://wpbrisko.com
  * Text Domain:       slim-slider
  * Domain Path:       languages
  * License:           GPLv2

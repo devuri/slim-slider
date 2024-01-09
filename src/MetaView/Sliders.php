@@ -57,7 +57,7 @@ class Sliders extends Settings
     protected static function slide_images(string $images): ?string
     {
         if (empty($images)) {
-            return false;
+            return null;
         }
 
         $images = explode(',', $images);
