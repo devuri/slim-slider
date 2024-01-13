@@ -182,6 +182,8 @@ class Slides
 			return $this->args;
 		}
 
+		$slider_id = (int) $this->args['id'];
+
 		$meta = get_post_meta($slider_id, 'sliders_meta', true);
 
 		$attributes = [

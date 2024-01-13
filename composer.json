@@ -5,6 +5,7 @@
 		}
 	},
 	"config": {
+		"platform-check": false,
 		"optimize-autoloader": true
 	},
 	"require": {
@@ -13,12 +14,14 @@
 	},
 	"require-dev": {
 		"vimeo/psalm": "^4.8",
-		"phpstan/phpstan": "^0.12.99",
+		"phpstan/phpstan": "^1.8",
+        "phpstan/phpstan-strict-rules": "^1.3",
 		"php-parallel-lint/php-parallel-lint": "^1.3",
-		"szepeviktor/phpstan-wordpress": "^0.7.7",
+		"szepeviktor/phpstan-wordpress": "^1.3",
 		"friendsofphp/php-cs-fixer": "^3.0"
 	},
 	"scripts": {
+		"install-no-req": "composer install --ignore-platform-reqs",
 		"build": [
 			"composer phplint",
 			"composer psalm-secure",
@@ -28,15 +31,15 @@
 			"composer no-dev"
 		],
 		"phpstan": [
-			"composer install -q",
+			"composer install-no-req -q",
 			"@php ./vendor/bin/phpstan analyse"
 		],
 		"phplint": [
-			"composer install -q",
+			"composer install-no-req -q",
 			"vendor/bin/parallel-lint --colors --exclude app --exclude vendor ."
 		],
 		"psalm-secure": [
-			"composer install -q",
+			"composer install-no-req -q",
 			"vendor/bin/psalm --taint-analysis"
 		],
 		"phpdoc": "php ./bin/phpdoc.phar",
