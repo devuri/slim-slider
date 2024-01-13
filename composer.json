@@ -45,9 +45,9 @@
 		"phpdoc": "php ./bin/phpdoc.phar",
 		"psalm": "vendor/bin/psalm",
 		"php-cs-fixer": [
-			"composer install",
+			"composer install-no-req",
 			"vendor/bin/php-cs-fixer fix src"
 		],
-		"no-dev": "composer install --no-dev -q"
+		"no-dev": "composer install-no-req --no-dev -q"
 	}
 }

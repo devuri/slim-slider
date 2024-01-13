@@ -20,14 +20,14 @@ class Sliders extends Settings
         echo self::slide_images($slides);
 
         echo self::form()->input('Slides', self::meta('slides', $get_meta));
-	    echo self::form()->input('Height', self::meta('height', $get_meta));
-	    echo self::form()->input('Width', self::meta('width', $get_meta));
-	    echo self::form()->input('Navigation', self::meta('nav', $get_meta));
-	    echo self::form()->input('Swipe Aimation Duration', self::meta('swipe_animation_duration', $get_meta));
-	    echo self::form()->input('Image Fill Mode', self::meta('image_fill_mode', $get_meta));
-	    echo self::form()->input('Transition Speed', self::meta('transition_speed', $get_meta));
-	    echo self::form()->input('Transition Opacity', self::meta('transition_opacity', $get_meta));
-	    echo self::form()->input('Speed', self::meta('speed', $get_meta));
+        echo self::form()->input('Height', self::meta('height', $get_meta));
+        echo self::form()->input('Width', self::meta('width', $get_meta));
+        echo self::form()->input('Navigation', self::meta('nav', $get_meta));
+        echo self::form()->input('Swipe Aimation Duration', self::meta('swipe_animation_duration', $get_meta));
+        echo self::form()->input('Image Fill Mode', self::meta('image_fill_mode', $get_meta));
+        echo self::form()->input('Transition Speed', self::meta('transition_speed', $get_meta));
+        echo self::form()->input('Transition Opacity', self::meta('transition_opacity', $get_meta));
+        echo self::form()->input('Speed', self::meta('speed', $get_meta));
     }
 
     /**
@@ -39,15 +39,15 @@ class Sliders extends Settings
     public function data($post_data): array
     {
         return array(
-            'slides' => sanitize_textarea_field($post_data['slides']),
-			'height' => sanitize_textarea_field($post_data['height']),
-			'width' => sanitize_textarea_field($post_data['width']),
-			'nav' => sanitize_textarea_field($post_data['nav']),
-			'swipe_animation_duration' => sanitize_textarea_field($post_data['swipe_animation_duration']),
-			'image_fill_mode' => sanitize_textarea_field($post_data['image_fill_mode']),
-			'transition_speed' => sanitize_textarea_field($post_data['transition_speed']),
-			'transition_opacity'  => sanitize_textarea_field($post_data['transition_opacity']),
-			'speed' => sanitize_textarea_field($post_data['speed']),
+            'slides'                   => sanitize_textarea_field($post_data['slides']),
+            'height'                   => sanitize_textarea_field($post_data['height']),
+            'width'                    => sanitize_textarea_field($post_data['width']),
+            'nav'                      => sanitize_textarea_field($post_data['nav']),
+            'swipe_animation_duration' => sanitize_textarea_field($post_data['swipe_animation_duration']),
+            'image_fill_mode'          => sanitize_textarea_field($post_data['image_fill_mode']),
+            'transition_speed'         => sanitize_textarea_field($post_data['transition_speed']),
+            'transition_opacity'       => sanitize_textarea_field($post_data['transition_opacity']),
+            'speed'                    => sanitize_textarea_field($post_data['speed']),
         );
     }
 
