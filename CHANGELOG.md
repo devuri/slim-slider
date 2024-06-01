@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://github.com/devuri/slim-slider/compare/1.2.1...2.0.0) (2024-06-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* various dev upgrades
+
+### Bug Fixes
+
+* fix requires Requires at least ([65ce673](https://github.com/devuri/slim-slider/commit/65ce673a7441f40e7fc0c7ae4fa0f4d9fe8a1bbf))
+* various dev upgrades ([a5686d0](https://github.com/devuri/slim-slider/commit/a5686d0513efa5c40a3ef15fb3f97033a4b973c3))
+
+
+### Miscellaneous Chores
+
+* v2.0.0 ([b6b502b](https://github.com/devuri/slim-slider/commit/b6b502b4ef907f6ab55cef566a2183fe0997c52a))
+
 ## [1.2.1](https://github.com/devuri/slim-slider/compare/v1.2.0...v1.2.1) (2024-06-01)
 
 
