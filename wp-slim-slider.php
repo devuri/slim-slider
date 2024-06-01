@@ -4,7 +4,7 @@
  * Plugin Name:       Slim Slider
  * Plugin URI:        https://wpbrisko.com/wordpress-plugins/
  * Description:       Slim Slider is a simple slider plugin that allows you to add a slider in posts and pages.
- * Version:           1.2.0
+ * Version:           2.0.0
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            uriel
