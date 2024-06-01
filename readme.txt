@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: slideshow, slider, image slider, responsive slider, jssor, slim slider
 Requires at least: 4.6
 Tested up to: 6.4
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,7 +64,7 @@ Fill type options:
 
 == Changelog ==
 
-= 2.0.1 =
+= 2.0.2 =
 * Initial release with bug fixes.
 
 = 2.0.0 =
@@ -92,4 +92,4 @@ Fill type options:
 
 == Upgrade Notice ==
 
-* Version 2.0.1 includes important bug fixes. Please update to ensure optimal performance.
+* Version 2.0.2 includes important bug fixes. Please update to ensure optimal performance.
