@@ -10,17 +10,17 @@ abstract class AdminPage implements AdminPageInterface
     /**
      * The main __construct.
      *
-     * @param string $title the page title.
+     * @param string $title       the page title.
      * @param bool   $page_styles the page css styles.
      */
-    public function __construct($title, $page_styles = true)
+    public function __construct( $title, $page_styles = true )
     {
         $this->page_title = $title;
-        $this->page_slug  = sanitize_title($title);
+        $this->page_slug  = sanitize_title( $title );
 
         // load css styles.
-        if ($page_styles) {
-            add_action('esa_head', array( $this, 'page_styles' ));
+        if ( $page_styles ) {
+            add_action( 'esa_head', [ $this, 'page_styles' ] );
         }
     }
 
@@ -31,7 +31,7 @@ abstract class AdminPage implements AdminPageInterface
      *
      * @return void .
      */
-    public function set_parent_slug($parent_slug): void
+    public function set_parent_slug( $parent_slug ): void
     {
         $this->parent_slug = $parent_slug;
     }
@@ -39,7 +39,7 @@ abstract class AdminPage implements AdminPageInterface
     /**
      * Get the parent slug.
      *
-     * @return string|null the slug.
+     * @return null|string the slug.
      */
     public function get_parent_slug(): ?string
     {
@@ -54,18 +54,18 @@ abstract class AdminPage implements AdminPageInterface
     /**
      * Page header.
      */
-    public function header()
+    public function header(): void
     {
-        do_action('esa_head'); ?>
+        do_action( 'esa_head' ); ?>
 		<!-- <div id="slsl-important-notice" style="background-color:#569769;"> -->
-		<div id="slsl-important-notice" style="background-color:<?php echo esc_attr($this->mcolor); ?>;">
+		<div id="slsl-important-notice" style="background-color:<?php echo esc_attr( $this->mcolor ); ?>;">
 			<span class="slsl-notice-message">
-				<?php do_action('esa_header_message'); ?>
+				<?php do_action( 'esa_header_message' ); ?>
 			</span>
 		</div>
 		<header class="slsl-header">
-			<h2><?php echo wp_kses_post($this->page_title); ?></h2>
-			<?php do_action('esa_html_header'); ?>
+			<h2><?php echo wp_kses_post( $this->page_title ); ?></h2>
+			<?php do_action( 'esa_html_header' ); ?>
 		</header>
 		<div class="wrap">
 		</div><!---admin notices -->
@@ -80,7 +80,7 @@ abstract class AdminPage implements AdminPageInterface
     /**
      * Page Footer.
      */
-    public function footer()
+    public function footer(): void
     {
         ?>
 		</p><!---innner paragraph -->
@@ -90,7 +90,7 @@ abstract class AdminPage implements AdminPageInterface
 		</div><!--slsl-container-->
 		<div style="padding-left: 20px; padding-right: 40px;color: #b9b9b9;font-weight: 300;" class="">
 			<hr/>
-				<?php bloginfo('name'); ?>
+				<?php bloginfo( 'name' ); ?>
 			<small> Admin GUI | Version</small>
 		</div>
 		<?php

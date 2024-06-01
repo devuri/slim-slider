@@ -4,8 +4,6 @@ namespace SlimSlider;
 
 /**
  * The sim Asset class.
- *
- * @package SlimSlider
  */
 trait Asset
 {
@@ -18,6 +16,7 @@ trait Asset
      */
     public static function uri(): string
     {
-        return SLIMSLIDER_URL . 'assets'; // @phpstan-ignore-line.
+        // @phpstan-ignore-next-line.
+        return SLIMSLIDER_URL . 'assets';
     }
 }

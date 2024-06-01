@@ -11,12 +11,12 @@ interface AdminPageInterface
      *
      * @return object the slug.
      */
-    public function set_parent_slug(string $parent_slug): void;
+    public function set_parent_slug( string $parent_slug): void;
 
     /**
      * Get the parent slug.
      *
-     * @return string|null the slug.
+     * @return null|string the slug.
      */
     public function get_parent_slug(): ?string;
 

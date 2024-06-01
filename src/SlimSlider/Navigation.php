@@ -3,31 +3,31 @@
 namespace SlimSlider;
 
 /**
- * Navigation
+ * Navigation.
  */
 class Navigation
 {
     /**
-     * Navigator
+     * Navigator.
      *
      * @param array $args .
+     *
      * @return string
      */
-    public static function get($args): ?string
+    public static function get( $args ): ?string
     {
-
         // Bullet Navigator.
-        if ('b' === $args['nav']) {
+        if ( 'b' === $args['nav'] ) {
             return self::bullet_nav();
         }
 
         // Arrow Navigator.
-        if ('a' === $args['nav']) {
+        if ( 'a' === $args['nav'] ) {
             return self::arrow_nav();
         }
 
         // Arrow + Bullet Navigator.
-        if ('ab' === $args['nav']) {
+        if ( 'ab' === $args['nav'] ) {
             return self::nav();
         }
 
@@ -35,7 +35,7 @@ class Navigation
     }
 
     /**
-     * Nav
+     * Nav.
      */
     public static function nav()
     {
@@ -43,7 +43,7 @@ class Navigation
     }
 
     /**
-     * Bullet Navigator
+     * Bullet Navigator.
      *
      * @return string
      */
@@ -59,7 +59,7 @@ class Navigation
     }
 
     /**
-     * Arrow Navigator
+     * Arrow Navigator.
      *
      * @return string
      */

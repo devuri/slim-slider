@@ -1,21 +1,22 @@
-.github export-ignore
-.git/ export-ignore
-tests/ export-ignore
-bin/ export-ignore
-docs/ export-ignore
-.gitattributes export-ignore
-.gitignore export-ignore
-.php-cs-fixer.php export-ignore
-README.md export-ignore
-readme.md export-ignore
-CHANGELOG.md export-ignore
-composer.json export-ignore
-composer.lock export-ignore
-package.json export-ignore
-LICENSE.md export-ignore
-LICENSE export-ignore
-phpcs.xml export-ignore
-phpcs.xml.dist export-ignore
-phpstan.neon export-ignore
-phpdoc.xml export-ignore
-psalm.xml export-ignore
+* text=auto
+
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
+
+# Flag some file extensions as binary. Git should already DTRT, but just in case.
+*.enc binary
+*.eot binary
+*.gif binary
+*.jpg binary
+*.png binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+
+
+# Exclude files from exporting
+/vendor/ export-ignore
+/node_modules export-ignore
