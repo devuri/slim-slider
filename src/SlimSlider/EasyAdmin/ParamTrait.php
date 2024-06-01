@@ -5,7 +5,7 @@ namespace SlimSlider\EasyAdmin;
 trait ParamTrait
 {
     /**
-     * $parent_slug
+     * $parent_slug.
      *
      * (string) (Required) The slug name for the parent menu
      * (or the file name of a standard WordPress admin page).
@@ -17,7 +17,7 @@ trait ParamTrait
     public $parent_slug = null;
 
     /**
-     * $page_title
+     * $page_title.
      *
      * (Required) The text to be displayed in the title
      * tags of the page when the menu is selected.
@@ -27,39 +27,42 @@ trait ParamTrait
     public $page_title = 'Page Title';
 
     /**
-     * $menu_title
+     * $menu_title.
      *
      * (string) (Required) The text to be used for the menu.
      *
      * @var string
-     * @link https://developer.wordpress.org/reference/functions/add_menu_page/
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_menu_page/
      */
     public $menu_title = 'Title';
 
     /**
-     * $capability
+     * $capability.
      *
      * (string) (Required) The capability required for this menu to be displayed to the user.
      *
      * @var string
-     * @link https://developer.wordpress.org/reference/functions/add_menu_page/
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_menu_page/
      */
     public $capability = 'manage_options';
 
     /**
-     * $menu_slug
+     * $menu_slug.
      *
      * (string) (Required) The slug name to refer to this menu by.
      * Should be unique for this menu page and only include lowercase alphanumeric,
      * dashes, and underscores characters to be compatible with sanitize_key().
      *
      * @var string
-     * @link https://developer.wordpress.org/reference/functions/add_menu_page/
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_menu_page/
      */
     public $page_slug = null;
 
     /**
-     * $icon_url
+     * $icon_url.
      *
      * (string) (Optional) The URL to the icon to be used for this menu.
      * Pass a base64-encoded SVG using a data URI,
@@ -70,23 +73,25 @@ trait ParamTrait
      * Default value: ''
      *
      * @var string
-     * @link https://developer.wordpress.org/reference/functions/add_menu_page/
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_menu_page/
      */
     public $icon_url = null;
 
     /**
-     * $position
+     * $position.
      *
      * (int) (Optional) The position in the menu order this item should appear.
      * Default value: null
      *
      * @var int
-     * @link https://developer.wordpress.org/reference/functions/add_menu_page/
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_menu_page/
      */
     public $position = null;
 
     /**
-     * $prefix
+     * $prefix.
      *
      * Main menu prefix used to add prefix for page=$prefix-menu-slug.
      *
@@ -95,7 +100,7 @@ trait ParamTrait
     public $prefix = null;
 
     /**
-     * Menu color
+     * Menu color.
      *
      * @var string
      */

@@ -9,7 +9,7 @@ class GetStarted extends AdminPage
     /**
      * Page Content.
      */
-    public function content()
+    public function content(): void
     {
         ?>
 		<h4 class="title">Slim Slider Shortcode Options and Usage</h4>
@@ -72,7 +72,7 @@ class GetStarted extends AdminPage
 			<br>
 			<hr>
 				Get started,
-					<a href="<?php echo esc_url(admin_url('post-new.php?post_type=slimslide')); ?>" >Create a Slide</a>.
+					<a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=slimslide' ) ); ?>" >Create a Slide</a>.
 			<hr>
 		<?php
     }

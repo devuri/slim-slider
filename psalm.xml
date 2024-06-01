@@ -2,6 +2,7 @@
 <psalm
     errorLevel="7"
     resolveFromConfigFile="true"
+	skipChecksOnUnresolvableIncludes="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
@@ -9,18 +10,27 @@
     <projectFiles>
         <directory name="src" />
 		<file name="wp-slim-slider.php" />
-		<ignoreFiles>
-			<directory name="vendor" />
-		</ignoreFiles>
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
     </projectFiles>
+	<stubs>
+		<file name="vendor/szepeviktor/phpstan-wordpress/bootstrap.php" />
+		<file name="vendor/php-stubs/wordpress-stubs/wordpress-stubs.php" />
+		<file name="tests/stubs.php" />
+	</stubs>
 	<!-- suppress >-->
 	<issueHandlers>
-		<UndefinedFunction>
-		  <errorLevel type="suppress">
-			<directory name="src" />
-			<file name="wp-slim-slider.php" />
-		  </errorLevel>
-		</UndefinedFunction>
+		<UndefinedDocblockClass>
+			<errorLevel type="suppress">
+				<directory name="src" />
+			</errorLevel>
+		</UndefinedDocblockClass>
+		<UndefinedClass>
+			<errorLevel type="suppress">
+				<referencedClass name="WP_Error" />
+			</errorLevel>
+		</UndefinedClass>
 		<UnresolvableInclude>
 			<errorLevel type="suppress">
   			<directory name="src" />
@@ -29,18 +39,13 @@
 		</UnresolvableInclude>
 		<MissingReturnType>
 			<errorLevel type="suppress">
-  				<directory name="src" />
-  		  	</errorLevel>
+  			<directory name="src" />
+  		  </errorLevel>
 		</MissingReturnType>
-		<UndefinedConstant>
+		<UndefinedFunction>
 			<errorLevel type="suppress">
-				<directory name="src" />
+				<referencedFunction name="apply_filters" />
 			</errorLevel>
-		</UndefinedConstant>
-		<ParadoxicalCondition>
-			<errorLevel type="suppress">
-				<directory name="src" />
-			</errorLevel>
-		</ParadoxicalCondition>
+		</UndefinedFunction>
 	</issueHandlers>
 </psalm>

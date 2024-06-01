@@ -7,7 +7,7 @@ trait StylesTrait
     /**
      * Styles.
      */
-    public function page_styles()
+    public function page_styles(): void
     {
         ?>
 		<style media="screen">
