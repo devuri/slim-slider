@@ -12,7 +12,7 @@
 		"devuri/cpt-meta-box": "^0.1"
 	},
 	"require-dev": {
-		"vimeo/psalm": "^4.8",
+		"vimeo/psalm": "^5.24",
 		"phpstan/phpstan": "^0.12.99",
 		"php-parallel-lint/php-parallel-lint": "^1.3",
 		"szepeviktor/phpstan-wordpress": "^0.7.7",
