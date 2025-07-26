@@ -17,7 +17,7 @@ trait MetaTrait
     {
         $border = $hr ? 'border-bottom: solid thin #ccd0d4;' : '';
 
-        return sprintf(
+        return \sprintf(
             '<tr style="%1$s">
 				<th style="color: darkgrey;">%2$s</th>
 				<td>%3$s</td>

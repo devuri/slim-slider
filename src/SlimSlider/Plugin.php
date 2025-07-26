@@ -28,8 +28,8 @@ class Plugin
             'manage_slimslide_posts_columns',
             function ( $columns ) {
                 unset( $columns['date'] );
-                $columns['slide_image'] = __( 'Slider Image', 'slim-slider' );
-                $columns['slide_id']    = __( 'ID', 'slim-slider' );
+                $columns['slide_image']  = __( 'Slider Image', 'slim-slider' );
+                $columns['slide_id']     = __( 'ID', 'slim-slider' );
 
                 return $columns;
             }
@@ -40,7 +40,7 @@ class Plugin
             function ( $column, $post_id ): void {
                 switch ( $column ) {
                     case 'slide_id':
-                        echo '<strong>' . esc_attr( $post_id ) . '</strong>';
+                        echo self::get_slide_id( $post_id );
 
                         break;
                     case 'slide_image':
@@ -145,5 +145,16 @@ class Plugin
             'slides'   => [],
             'get'      => false,
         ];
+    }
+
+    protected static function get_slide_id( $post_id )
+    {
+        $post_item = get_post( $post_id );
+
+        if ( 'publish' === $post_item->post_status ) {
+            return '<strong style="color: green;">' . esc_attr( $post_id ) . '</strong>';
+        }
+
+        return esc_attr( $post_id );
     }
 }

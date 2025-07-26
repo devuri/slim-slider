@@ -7,8 +7,6 @@ use SlimSlider\PostType\SlimSlide;
 
 class Slides
 {
-    use Asset;
-
     /**
      * Define Version.
      */
@@ -111,7 +109,7 @@ class Slides
 
         // PHP8.0 fix The percentage sign (%) inside the style attributes needs to be escaped
         // as %% to avoid conflicts with sprintf, which uses % for placeholders.
-        return sprintf(
+        return \sprintf(
             '<div id="slimslider_%6$s" style="position:relative;margin:0 auto;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;visibility:hidden;">
 		        <div data-u="loading" class="slimslrl-009-spin" style="position:absolute;top:0px;left:0px;width:100%%;height:100%%;text-align:center;background-color:rgba(0,0,0,0.7);">
 		            <img style="margin-top:-19px;position:relative;top:50%%;width:38px;height:38px;" src="%3$s/svg/loading/static-svg/spin.svg" />
@@ -226,7 +224,7 @@ class Slides
      */
     protected function image_slides()
     {
-        return sprintf(
+        return \sprintf(
             '<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:%1$spx;height:%2$spx;overflow:hidden;">
 				%3$s
 			</div>',

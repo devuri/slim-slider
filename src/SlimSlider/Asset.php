@@ -2,10 +2,7 @@
 
 namespace SlimSlider;
 
-/**
- * The sim Asset class.
- */
-trait Asset
+class Asset
 {
     /**
      * Asset uri.
