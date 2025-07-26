@@ -92,7 +92,7 @@ class Editor
         $name  = str_replace( ' ', '_', $this->id );
         $label = ucwords( str_replace( '_', ' ', $name ) );
 
-        return sprintf(
+        return \sprintf(
             '<tr class="input">
 		    <th><label for="%1$s">%2$s</label></th>
 			    <td>%3$s</td>

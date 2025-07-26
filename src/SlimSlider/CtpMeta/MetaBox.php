@@ -112,26 +112,26 @@ class MetaBox
 			<?php
                 echo self::form()->table( 'open' );
 
-			/**
-			 * Get meta data.
-			 */
-			$get_meta = get_post_meta( $post->ID, $this->meta . '_meta', true );
-			if ( empty( $get_meta ) ) {
-				$get_meta = [];
-			}
+        /**
+         * Get meta data.
+         */
+        $get_meta = get_post_meta( $post->ID, $this->meta . '_meta', true );
+        if ( empty( $get_meta ) ) {
+            $get_meta = [];
+        }
 
-			/**
-			 * Settings.
-			 */
-			try {
-				$this->build()->settings( $get_meta );
-			} catch ( Exception $e ) {
-				print 'Exception Message: ' . $e->getMessage();
-			}
+        /**
+         * Settings.
+         */
+        try {
+            $this->build()->settings( $get_meta );
+        } catch ( Exception $e ) {
+            print 'Exception Message: ' . $e->getMessage();
+        }
 
-			echo self::form()->table( 'close' );
-			self::form()->nonce();
-			?>
+        echo self::form()->table( 'close' );
+        self::form()->nonce();
+        ?>
 	   </div>
 		<?php
     }
