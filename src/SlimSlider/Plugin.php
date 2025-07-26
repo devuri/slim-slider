@@ -28,8 +28,8 @@ class Plugin
             'manage_slimslide_posts_columns',
             function ( $columns ) {
                 unset( $columns['date'] );
-                $columns['slide_image']  = __( 'Slider Image', 'slim-slider' );
-                $columns['slide_id']     = __( 'ID', 'slim-slider' );
+                $columns['slide_image'] = __( 'Slider Image', 'slim-slider' );
+                $columns['slide_id']    = __( 'ID', 'slim-slider' );
 
                 return $columns;
             }
