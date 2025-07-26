@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.0.0](https://github.com/devuri/slim-slider/compare/2.0.2...3.0.0) (2025-07-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* asset trait is now a class
+
+### Bug Fixes
+
+* asset trait is now a class ([6a3ef7c](https://github.com/devuri/slim-slider/commit/6a3ef7c29ab19f0d1a4a4a4fb6fca81bd0ac1370))
+* upgrade jquery from 3.6.1 to 3.7.1 ([217d4d1](https://github.com/devuri/slim-slider/commit/217d4d1b6debbeefabdc051d40a48d6eed045b69))
+
+
+### Miscellaneous Chores
+
+* build ([394b367](https://github.com/devuri/slim-slider/commit/394b367cf26cbc9de0d02ea54d073efc4f6a4f97))
+* v3.0.0 ([30e01dd](https://github.com/devuri/slim-slider/commit/30e01dd7f4158aaf198d66123a4274225ab36ba8))
+
 ## [2.0.2](https://github.com/devuri/slim-slider/compare/2.0.1...2.0.2) (2024-06-01)
 
 
