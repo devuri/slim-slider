@@ -69,6 +69,39 @@ In this case only the slide IDs that have been included will be included in the 
 [slim_slider slides="135,654,168,201"]
 ```
 
+### Slide Button
+
+You can add a call-to-action button on your slides instead of making the entire image clickable.
+
+> **Important:** The button only appears when BOTH `url` AND `button_text` are set. If there's no URL, the button won't display.
+
+| Meta Field | Required | Description |
+| ---------- | -------- | ----------- |
+| `url` | Yes | The button link destination |
+| `button_text` | Yes | Text displayed on the button (e.g., "Learn More") |
+| `button_position` | No | Button alignment: `left`, `center`, or `right` (default: `center`) |
+| `button_class` | No | Custom CSS class for styling (default: `slimslider-btn`) |
+
+#### Button Customization
+
+You can customize the button appearance with CSS:
+
+```css
+/* Change button color */
+.slimslider-btn {
+    background-color: #e74c3c;
+}
+
+.slimslider-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Adjust vertical position */
+#slimslider_1 .slimslider-btn-wrap {
+    bottom: 40px;
+}
+```
+
 ### Slider Options
 
 Slim Slider includes several options that can be specified in the shortcode:
