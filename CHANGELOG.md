@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/devuri/slim-slider/compare/3.0.0...3.1.0) (2026-01-15)
+
+
+### Features
+
+* add slide button with position support ([abb4cb7](https://github.com/devuri/slim-slider/commit/abb4cb75166f076c195e62722d5b1f4dde546fe3))
+
+
+### Miscellaneous Chores
+
+* 3.1.0 ([cedab00](https://github.com/devuri/slim-slider/commit/cedab00fb54aae2009d2aea31a3757330a66daa2))
+* 3.1.0 ([623c146](https://github.com/devuri/slim-slider/commit/623c146c92a1391013f94663698f72406f04899c))
+
 ## [3.0.0](https://github.com/devuri/slim-slider/compare/2.0.2...3.0.0) (2025-07-26)
 
 
