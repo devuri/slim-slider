@@ -10,7 +10,7 @@ class Slides
     /**
      * Define Version.
      */
-    public const VERSION = '0.8.6';
+    public const VERSION = '0.8.7';
 
     /**
      * Shortcode $args.
@@ -207,10 +207,42 @@ class Slides
                 $click_event = 'onclick="' . esc_html( $js_event_safe ) . '" ';
             }
 
+            // Learn More button (backward compatible - only shows if configured)
+            $button_text = isset( $meta['button_text'] ) && ! empty( $meta['button_text'] )
+                ? $meta['button_text']
+                : null;
+
+            $button_html = '';
+            if ( $button_text && ! empty( $meta['url'] ) ) {
+                $button_class = isset( $meta['button_class'] ) && ! empty( $meta['button_class'] )
+                    ? esc_attr( $meta['button_class'] )
+                    : 'slimslider-btn';
+
+                $button_html = \sprintf(
+                    '<a %1$shref="%2$s" class="%3$s">%4$s</a>',
+                    $click_event ?? '',
+                    esc_url( $meta['url'] ),
+                    $button_class,
+                    esc_html( $button_text )
+                );
+            }
+
+            // Button position (defaults to center)
+            $button_pos = isset( $meta['button_position'] ) && ! empty( $meta['button_position'] )
+                ? 'slimslider-btn-' . sanitize_html_class( $meta['button_position'] )
+                : 'slimslider-btn-center';
+
+            $image_tag = '<img data-u="image" alt="' . esc_attr( $alt ) . '" src="' . esc_url( wp_get_attachment_url( $meta['thumbnail'] ) ) . '" />';
+
             if ( \is_null( $meta['url'] ) || empty( $meta['url'] ) ) {
-                $slider_image .= '<div><img data-u="image" alt="' . $alt . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></div>';
+                // No URL - just image, no button
+                $slider_image .= '<div class="slimslider-slide">' . $image_tag . '</div>';
+            } elseif ( $button_html ) {
+                // Has URL and button configured - show button overlay instead of linked image
+                $slider_image .= '<div class="slimslider-slide">' . $image_tag . '<div class="slimslider-btn-wrap ' . $button_pos . '">' . $button_html . '</div></div>';
             } else {
-                $slider_image .= '<div><a ' . $click_event . ' href="' . $meta['url'] . '"><img data-u="image" alt="' . $alt . '" src="' . wp_get_attachment_url( $meta['thumbnail'] ) . '" /></a></div>';
+                // Has URL but no button - keep original linked image behavior
+                $slider_image .= '<div><a ' . $click_event . ' href="' . esc_url( $meta['url'] ) . '">' . $image_tag . '</a></div>';
             }
         }// end foreach
 
