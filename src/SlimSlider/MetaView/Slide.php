@@ -26,6 +26,9 @@ class Slide extends Settings
         echo self::form()->input( 'Alt Text', self::meta( 'alt', $get_meta ) );
         echo self::form()->textarea( 'Description', self::meta( 'description', $get_meta ) );
         echo self::form()->input( 'URL', self::meta( 'url', $get_meta ) );
+        echo self::form()->input( 'Button Text', self::meta( 'button_text', $get_meta ) );
+        echo self::form()->input( 'Button Class', self::meta( 'button_class', $get_meta ) );
+        echo self::form()->input( 'Button Position', self::meta( 'button_position', $get_meta ) );
         echo self::form()->input( 'OnClick', self::meta( 'onclick', $get_meta ) );
     }
 
@@ -39,11 +42,14 @@ class Slide extends Settings
     public function data( $post_data ): array
     {
         return [
-            'heading'     => sanitize_textarea_field( $post_data['heading'] ),
-            'alt'         => sanitize_textarea_field( $post_data['alt_text'] ),
-            'description' => sanitize_textarea_field( $post_data['description_textarea'] ),
-            'url'         => esc_url_raw( $post_data['url'], self::$allowed_protocols ),
-            'onclick'     => sanitize_textarea_field( $post_data['onclick'] ),
+            'heading'         => sanitize_textarea_field( $post_data['heading'] ),
+            'alt'             => sanitize_textarea_field( $post_data['alt_text'] ),
+            'button_text'     => sanitize_textarea_field( $post_data['button_text'] ),
+            'button_class'    => sanitize_textarea_field( $post_data['button_class'] ),
+            'button_position' => sanitize_textarea_field( $post_data['button_position'] ),
+            'description'     => sanitize_textarea_field( $post_data['description_textarea'] ),
+            'url'             => esc_url_raw( $post_data['url'], self::$allowed_protocols ),
+            'onclick'         => sanitize_textarea_field( $post_data['onclick'] ),
         ];
     }
 }
